@@ -13,17 +13,21 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.lifemap.spring.dao.CustomerDAO;
 import com.lifemap.spring.entity.Customer;
+import com.lifemap.spring.entity.Tasks;
 import com.lifemap.spring.service.CustomerService;
+import com.lifemap.spring.service.DataService;
 
 @Controller
 @RequestMapping("/customer")
 public class CustomerController {
 
 	
+	/*@Autowired
+	private CustomerService customerService;*/
 	@Autowired
-	private CustomerService customerService;
+	private DataService dataService;
 	
-	@GetMapping("/list")
+	/*@GetMapping("/list")
 	public String listCustomers(Model theModel) {
 		
 		List<Customer> theCustomers = customerService.getCustomers();
@@ -31,7 +35,19 @@ public class CustomerController {
 		theModel.addAttribute("customers", theCustomers);
 		
 		return "list-customers";
+	}*/
+	
+	@GetMapping("/tasks")
+	public String listTasks(Model theModel) {
+		
+		List<Tasks> theTasks = dataService.getTasks();
+		
+		theModel.addAttribute("tasks", theTasks);
+		
+		return "list-tasks";
 	}
+	
+	/*
 	
 	@GetMapping("/showFormForAdd")
 	public String showFormForAdd(Model theModel) {
@@ -67,7 +83,7 @@ public class CustomerController {
 		
 		return "redirect:/customer/list";
 	}
-	
+	*/
 	
 }
 
