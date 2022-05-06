@@ -16,10 +16,10 @@ import com.lifemap.spring.entity.Customer;
 import com.lifemap.spring.entity.Tasks;
 import com.lifemap.spring.service.CustomerService;
 import com.lifemap.spring.service.DataService;
-/*
+
 @Controller
-@RequestMapping("/")*/
-public class CustomerController {
+@RequestMapping("/")
+public class BaseController {
 
 	
 	/*@Autowired
@@ -36,7 +36,7 @@ public class CustomerController {
 		
 		return "list-customers";
 	}*/
-	/*
+	
 	@GetMapping("/tasks")
 	public String listTasks(Model theModel) {
 		
@@ -45,7 +45,7 @@ public class CustomerController {
 		theModel.addAttribute("tasks", theTasks);
 		
 		return "list-tasks";
-	}*/
+	}
 	
 	/*
 	
