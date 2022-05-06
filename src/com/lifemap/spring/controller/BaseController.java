@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.lifemap.spring.dao.CustomerDAO;
+import com.lifemap.spring.entity.Branches;
 import com.lifemap.spring.entity.Customer;
 import com.lifemap.spring.entity.Tasks;
+import com.lifemap.spring.entity.Users;
 import com.lifemap.spring.service.CustomerService;
 import com.lifemap.spring.service.DataService;
 
@@ -37,14 +39,56 @@ public class BaseController {
 		return "list-customers";
 	}*/
 	
-	@GetMapping("/tasks")
+	@GetMapping("/userTasks")
 	public String listTasks(Model theModel) {
+		
+		int currentUserId = 100;
+		
+		
+		List<Tasks> theUserTasks = dataService.getUserTasks(currentUserId);
+		
+		if(theUserTasks != null) {
+			theModel.addAttribute("userTasks", theUserTasks);
+		}else {
+			theModel.addAttribute("userTasks", "No data");
+		}
+		theModel.addAttribute("userTasks", theUserTasks);
+		
+		
+		return "user-tasks";
+	}
+	
+	@GetMapping("/allTasks")
+	public String listAllTasks(Model theModel) {
+		
 		
 		List<Tasks> theTasks = dataService.getTasks();
 		
 		theModel.addAttribute("tasks", theTasks);
 		
-		return "list-tasks";
+		return "all-tasks";
+	}
+	
+	@GetMapping("/allUsers")
+	public String listAllUsers(Model theModel) {
+		
+		
+		List<Users> theUsers = dataService.getUsers();
+		
+		theModel.addAttribute("users", theUsers);
+		
+		return "all-users";
+	}
+	
+	@GetMapping("/allBranches")
+	public String listAllBranches(Model theModel) {
+		
+		
+		List<Branches> theBranches = dataService.getBranches();
+		
+		theModel.addAttribute("branches", theBranches);
+		
+		return "all-branches";
 	}
 	
 	/*

@@ -1,2 +1,2 @@
 <!--% response.sendRedirect("customer/tasks"); %--> 
-<% response.sendRedirect("tasks"); %>
+<% response.sendRedirect("allTasks"); %>

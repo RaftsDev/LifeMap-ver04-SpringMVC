@@ -37,7 +37,7 @@ public class Branches {
 	@JoinColumn(name = "user_id")
 	private Users user;
 	
-	@OneToMany(fetch=FetchType.LAZY,
+	@OneToMany(fetch=FetchType.EAGER,
 			   mappedBy="branch",
 			   cascade= {CascadeType.PERSIST, CascadeType.MERGE,
 						 CascadeType.DETACH, CascadeType.REFRESH})
