@@ -49,7 +49,8 @@ public class DataDAOImpl implements DataDAO {
 		
 		
 		//get all branches of current user
-		Query<Branches> theQuery = currentSession.createQuery("from Branches B where B.user.id=100", Branches.class);
+		//int tempId = 100;
+		Query<Branches> theQuery = currentSession.createQuery("from Branches B where B.user.id="+userId, Branches.class);
 		
 		//Query<Branches> theQuery = currentSession.createQuery("from Branches", Branches.class);
 		List<Branches> branches = theQuery.getResultList();
@@ -59,31 +60,35 @@ public class DataDAOImpl implements DataDAO {
 		
 		//get tasks from current user's branches 
 		
+		
+		//Get all tasks from all users
 		//List<Tasks> currentUserTasks = branches.get(1).getTasks();
-		List<Tasks> currentUserTasks = null;
+		//Query<Tasks> theQueryUsers = currentSession.createQuery("from Tasks", Tasks.class);
+		//List<Tasks> allTasks = theQueryUsers.getResultList();
 		
-		if(!branches.isEmpty()) {
-			
-			for (int i=0; i<branches.size(); i++) {
+		//if(!branches.isEmpty()) {
+		List<Tasks> currentUserTasks = branches.get(0).getTasks();
+			for (int i=1; i<branches.size(); i++) {
 				
-				//get tasks from single branch
-				List<Tasks> tempTasks = branches.get(i).getTasks();
-				
+				//get element tasks from array
+				List<Tasks> tempTask = branches.get(i).getTasks();
+				currentUserTasks.addAll(tempTask);
+				//List<Tasks> currentUserTasks;
 				//Check if branch has any task
-				if(tempTasks != null) {
-					
-					currentUserTasks.addAll(tempTasks);
-				}
+				//if(tempTasks != null) {
 				
-			}
-			
-		}
-		
-		
-		
+				//Loop over branches
+				/*for(int j=0; j<tempTask.size(); j++) {
+					if(tempTasks.getId() == branches.get(j).getId()) {
+						currentUserTasks.add(tempTasks);
+					}*/
+				}
+					
+					//currentUserTasks.addAll(tempTasks);
+				
 		
 		return currentUserTasks;
-	}
+}
 
 	@Override
 	public List<Users> getUsers() {

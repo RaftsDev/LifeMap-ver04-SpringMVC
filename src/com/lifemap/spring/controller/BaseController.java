@@ -47,11 +47,11 @@ public class BaseController {
 		
 		List<Tasks> theUserTasks = dataService.getUserTasks(currentUserId);
 		
-		if(theUserTasks != null) {
+		/*if(theUserTasks != null) {
 			theModel.addAttribute("userTasks", theUserTasks);
 		}else {
 			theModel.addAttribute("userTasks", "No data");
-		}
+		}*/
 		theModel.addAttribute("userTasks", theUserTasks);
 		
 		
