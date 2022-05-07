@@ -43,13 +43,17 @@
 			<div id="accordion-outer-box">
 
 				<div class="accordion" id="accordionExample"></div>
+				
+				
+				<!--  External loop -->
+				<c:forEach var="tempUserBranch" items="${userBranches}">
 				<div class="accordion-item">
 					<h2 class="accordion-header" id="headingOne">
 						<button class="accordion-button" type="button"
 							data-bs-toggle="collapse" data-bs-target="#collapseOne"
-							aria-expanded="true" aria-controls="collapseOne">Java
-							programming</button>
+							aria-expanded="true" aria-controls="collapseOne">${tempUserBranch.shortDesc}</button>
 					</h2>
+					
 					<ul id="collapseOne" class="accordion-collapse collapse show"
 						aria-labelledby="headingOne" data-bs-parent="#accordionExample"
 						style="list-style-type: none;">
@@ -59,6 +63,8 @@
 						</c:forEach>
 					</ul>
 				</div>
+				</c:forEach>
+				
 
 				
 
@@ -66,7 +72,7 @@
 
 
 
-				<div class="accordion-item">
+				<!--  div class="accordion-item">
 					<h2 class="accordion-header" id="headingTwo">
 						<button class="accordion-button collapsed" type="button"
 							data-bs-toggle="collapse" data-bs-target="#collapseTwo"
@@ -83,7 +89,7 @@
 							, though the transition does limit overflow.
 						</div>
 					</div>
-				</div>
+				</div-->
 
 
 
