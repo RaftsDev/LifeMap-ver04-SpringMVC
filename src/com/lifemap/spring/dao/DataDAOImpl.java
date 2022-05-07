@@ -49,9 +49,11 @@ public class DataDAOImpl implements DataDAO {
 		
 		
 		//get all branches of current user
-		//int tempId = 100;
-		Query<Branches> theQuery = currentSession.createQuery("from Branches B where B.user.id="+userId, Branches.class);
 		
+		//Query<Branches> theQuery = currentSession.createQuery("from Branches B where B.user.id="+userId, Branches.class);
+		
+		//get all branches in ordered way
+		Query<Branches> theQuery = currentSession.createQuery("from Branches B where B.user.id="+userId+" order by id", Branches.class);
 		//Query<Branches> theQuery = currentSession.createQuery("from Branches", Branches.class);
 		List<Branches> branches = theQuery.getResultList();
 		
