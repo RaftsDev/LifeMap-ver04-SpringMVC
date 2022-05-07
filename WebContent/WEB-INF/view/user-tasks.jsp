@@ -20,19 +20,16 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-sm bg-secondary navbar-light justify-content-end">
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" href="#">Main</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="login.jsp">Login</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="about.jsp">About</a>
-    </li>
-  </ul>
-</nav>
+	<nav
+		class="navbar navbar-expand-sm bg-secondary navbar-light justify-content-end">
+		<ul class="navbar-nav">
+			<li class="nav-item"><a class="nav-link" href="#">Main</a></li>
+			<li class="nav-item"><a class="nav-link" href="login.jsp">Login</a>
+			</li>
+			<li class="nav-item"><a class="nav-link" href="about.jsp">About</a>
+			</li>
+		</ul>
+	</nav>
 
 	<main>
 
@@ -46,8 +43,8 @@
 				<!-- input type="button" value="Add Customer"
 				onclick="window.location.href='showFormForAdd'; return false;"
 				class="add-button" /-->
-				
-					<!--  tr>
+
+				<!--  tr>
 
 						<th></th>
 						<th>Tasks</th>
@@ -55,49 +52,49 @@
 						<th></th>
 
 					</tr-->
-					<c:forEach var="tempUserTask" items="${userTasks}">
+				<div class="accordion" id="accordionExample"></div>
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="headingOne">
+						<button class="accordion-button" type="button"
+							data-bs-toggle="collapse" data-bs-target="#collapseOne"
+							aria-expanded="true" aria-controls="collapseOne">Java
+							programming</button>
+					</h2>
+					<ul id="collapseOne" class="accordion-collapse collapse show"
+						aria-labelledby="headingOne" data-bs-parent="#accordionExample">
 
-						
-							
-							<td>${tempUserTask.shortDesc}</td>
-							
-							
-						
-					</c:forEach>
-				
+						<c:forEach var="tempUserTask" items="${userTasks}">
+							<li class="accordion-body">${tempUserTask.shortDesc}</li>
+						</c:forEach>
+					</ul>
+				</div>
+
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="headingTwo">
+						<button class="accordion-button collapsed" type="button"
+							data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+							aria-expanded="false" aria-controls="collapseTwo">
+							Professional development</button>
+					</h2>
+					<div id="collapseTwo" class="accordion-collapse collapse"
+						aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+						<div class="accordion-body">
+							<strong>This is the second item's accordion body.</strong> It is
+							hidden by default, until the collapse plugin adds the appropriate
+							classes
+							<code>.accordion-body</code>
+							, though the transition does limit overflow.
+						</div>
+					</div>
+				</div>
+
+
+
+
 
 			</div>
-			
-			<div class="accordion" id="accordionExample">
 
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingOne">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Java programming
-      </h2>
-      <ul id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-        <li class="accordion-body">
-          Prepare for KBA-HTML
-        </li>
-        <li class="accordion-body">
-          Prepare for SBA-HTML
-        </li>
-      </ul>
-    </div>
 
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingTwo">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Professional development
-        </button>
-      </h2>
-      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-          <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-        </div>
-      </div>
-    </div>
-      </div>
 		</div>
 
 
