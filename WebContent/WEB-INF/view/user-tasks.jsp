@@ -5,63 +5,106 @@
 <html>
 
 <head>
-<title>List Tasks</title>
+
 <!-- reference our style sheet -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<link type="text/css" rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/style.css" />
 
-<!--  link type="text/css" rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/style.css" /-->
-
+<title>List Tasks</title>
 </head>
 
 <body>
+	<nav class="navbar navbar-expand-sm bg-secondary navbar-light justify-content-end">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="#">Main</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="login.jsp">Login</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="about.jsp">About</a>
+    </li>
+  </ul>
+</nav>
 
-	<div id="wraper">
-		<div id="header">
-			<h2>To Do list of user's tasks</h2>
-		</div>
+	<main>
 
-		<div id="container">
+		<div id="board-box">
+			<div id="header">
+				<h2>To Do list of user's tasks</h2>
+			</div>
 
-			<input type="button" value="Add Customer"
+			<div id="table-outer-box">
+
+				<!-- input type="button" value="Add Customer"
 				onclick="window.location.href='showFormForAdd'; return false;"
-				class="add-button" />
-			<table>
-				<tr>
-					<th>First name</th>
-					<th>Last name</th>
-					<th>Tasks</th>
-					<th>Urgency</th>
-				</tr>
-				<c:forEach var="tempUserTask" items="${userTasks}">
+				class="add-button" /-->
+				<table>
+					<!--  tr>
 
-					<c:url var="updateLink" value="/customer/showFormForUpdate">
-						<c:param name="customerId" value="${tempUserTask.id}" />
-					</c:url>
+						<th></th>
+						<th>Tasks</th>
+						<th>Urgency</th>
+						<th></th>
 
-					<c:url var="deleteLink" value="/customer/delete">
-						<c:param name="customerId" value="${tempUserTask.id}" />
-					</c:url>
+					</tr-->
+					<c:forEach var="tempUserTask" items="${userTasks}">
 
-					<tr>
-						<td>${tempUserTask.id}</td>
-						<td>${tempUserTask.shortDesc}</td>
-						<td>${tempUserTask.longDesc}</td>
-						<td>${tempUserTask.urgencyLevel}</td>
-						<td>${tempUserTask.branch}</td>
+						<tr>
+							<td>...</td>
+							<td>${tempUserTask.shortDesc}</td>
+							<td>${tempUserTask.urgencyLevel}</td>
+							<td>...</td>
+						</tr>
+					</c:forEach>
+				</table>
 
-						<td><a href="${updateLink}">Update</a> | <a
-							href="${deleteLink}"
-							onclick="if (!(confirm('Are you sure you want to delete this customer?'))) return false">Delete</a></td>
-					</tr>
-				</c:forEach>
-			</table>
+			</div>
+			
+			<div class="accordion" id="accordionExample">
 
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Java programming
+      </h2>
+      <ul id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+        <li class="accordion-body">
+          Prepare for KBA-HTML
+        </li>
+        <li class="accordion-body">
+          Prepare for SBA-HTML
+        </li>
+      </ul>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Professional development
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+        </div>
+      </div>
+    </div>
+      </div>
 		</div>
-	</div>
 
 
 
+	</main>
 
+	<footer>&copy raftsdev 2022</footer>
 
 </body>
 

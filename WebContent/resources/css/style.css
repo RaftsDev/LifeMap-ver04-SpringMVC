@@ -1,47 +1,70 @@
 html, body{
-	margin-left:15px; margin-right:15px; 
-	padding:0px; 
-	font-family:Verdana, Arial, Helvetica, sans-serif;
+
+font-family: sans-serif;
+background: url(../img/kelly-sikkema-2Kx1375-90prc.jpg);
+/*background-size:cover;*/
+background-position: center;
 }
 
-table {   
-	border-collapse:collapse;
-	border-bottom:1px solid gray;
-	font-family: Tahoma,Verdana,Segoe,sans-serif;
-	width:72%;
-}
- 
-th {
-	border-bottom:1px solid gray;
-	background:none repeat scroll 0 0 #09c332;
-	padding:10px;
-	color: #FFFFFF;
+/*
+.nav-panel{
+  padding: 0.3% 1%;
+  height: 5vh;
+  background-color: #afafaf;
+  text-align: right;
+  box-shadow: 5px 5px #555555;
 }
 
-tr {
-	border-top:1px solid gray;
-	text-align:center;	
+.nav-box{
+  display: inline-block;
+  width: 10%;
+  font-size: 2em;
 }
- 
-tr:nth-child(even) {background: #FFFFFF}
-tr:nth-child(odd) {background: #BBBBBB}	
- 
-#wrapper {width: 100%; margin-top: 0px; }
-#header {width: 70%; background: #09c332; margin-top: 0px; padding:15px 0px 15px 15px;}
-#header h2 {width: 100%; margin:auto; color: #FFFFFF;}
-#container {width: 100%; margin:auto}
-#container h3 {color: #000;}
-#container #content {margin-top: 20px;}
 
-.add-button {
-	border: 1px solid #666; 
-	border-radius: 5px; 
-	padding: 4px; 
-	font-size: 12px;
-	font-weight: bold;
-	width: 120px; 
-	padding: 5px 10px; 
-	
-	margin-bottom: 15px;
-	background: #cccccc;
+.nav-box:hover{
+  background-color: #bfbfbf;
+  font-size: 2.1em;
+  transition-property:  font-size;
+  transition-duration: 2s;
+}*/
+
+main{
+  height: 85vh;
+  text-align: center;
+  /*background-color: #bfbfbf;*/
 }
+
+
+/*
+footer{
+  text-align: right;
+}*/
+
+#board-box{
+  display: inline-block;
+  width: 33%;
+  height: 100%;
+  margin: auto 0%;
+  padding: 1% 0%;
+  text-align: center;
+  background-color: #c0c0c0;
+  opacity: 0.75;
+  
+}
+
+#table-outer-box{
+	margin: auto 0;
+}
+
+
+/*
+.task-box-outter{
+  height: 73vh;
+  width: 45%;
+  margin: 0 auto;
+  border: 1px solid #515151;
+  border-radius: 1%;
+  box-shadow: 5px 5px #555555;
+
+
+}*/
