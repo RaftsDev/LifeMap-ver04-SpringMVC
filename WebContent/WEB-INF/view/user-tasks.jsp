@@ -41,12 +41,12 @@
 				<h2>To Do list of user's tasks</h2>
 			</div>
 
-			<div id="table-outer-box">
+			<div id="accordion-outer-box">
 
 				<!-- input type="button" value="Add Customer"
 				onclick="window.location.href='showFormForAdd'; return false;"
 				class="add-button" /-->
-				<table>
+				
 					<!--  tr>
 
 						<th></th>
@@ -57,14 +57,14 @@
 					</tr-->
 					<c:forEach var="tempUserTask" items="${userTasks}">
 
-						<tr>
-							<td>...</td>
+						
+							
 							<td>${tempUserTask.shortDesc}</td>
-							<td>${tempUserTask.urgencyLevel}</td>
-							<td>...</td>
-						</tr>
+							
+							
+						
 					</c:forEach>
-				</table>
+				
 
 			</div>
 			
