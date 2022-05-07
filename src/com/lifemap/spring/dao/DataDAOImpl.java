@@ -3,6 +3,7 @@ package com.lifemap.spring.dao;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 
@@ -81,10 +82,17 @@ public class DataDAOImpl implements DataDAO {
 			userTasks.addAll(tempTask);
 
 		}
+		
+		//LinkedHashSet for unique value of branches
+		LinkedHashSet<Branches> userBranches = new LinkedHashSet();
+		 for (Tasks tempTask : userTasks) {
+			 userBranches.add(tempTask.getBranch());
+		 }
 
 		// HashMap for transfer data to Controller
 		Map<String, Collection> userTasksBranches = new HashMap();
 		userTasksBranches.put("userTasks", userTasks);
+		userTasksBranches.put("userBranches", userBranches);
 
 		return userTasksBranches;
 	}

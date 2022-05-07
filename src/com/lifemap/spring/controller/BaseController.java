@@ -49,8 +49,9 @@ public class BaseController {
 		//get HashMap from DAO
 		Map<String, Collection> theUserTasks = dataService.getUserTasks(currentUserId);
 		
-		
+		//transfer tasks and branches to view file
 		theModel.addAttribute("userTasks", theUserTasks.get("userTasks"));
+		theModel.addAttribute("userBranches",theUserTasks.get("userBranches"));
 		
 		
 		return "user-tasks";
