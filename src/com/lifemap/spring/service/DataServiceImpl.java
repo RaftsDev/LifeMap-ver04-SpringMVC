@@ -6,10 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.lifemap.spring.dao.CustomerDAO;
 import com.lifemap.spring.dao.DataDAO;
 import com.lifemap.spring.entity.Branches;
-import com.lifemap.spring.entity.Customer;
 import com.lifemap.spring.entity.Tasks;
 import com.lifemap.spring.entity.Users;
 
@@ -20,18 +18,9 @@ public class DataServiceImpl implements DataService {
 	@Autowired
 	private DataDAO dataDAO;
 	
-	/*@Override
-	@Transactional
-	public List<Customer> getCustomers() {
-		// TODO Auto-generated method stub
-		return customerDAO.getCustomers();
-	}*/
-	
-	
 	@Override
 	@Transactional
 	public List<Tasks> getTasks() {
-		// TODO Auto-generated method stub
 		
 		return dataDAO.getTasks();
 	}
