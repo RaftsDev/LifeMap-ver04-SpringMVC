@@ -40,18 +40,6 @@
 
 			<div id="accordion-outer-box">
 
-				<!-- input type="button" value="Add Customer"
-				onclick="window.location.href='showFormForAdd'; return false;"
-				class="add-button" /-->
-
-				<!--  tr>
-
-						<th></th>
-						<th>Tasks</th>
-						<th>Urgency</th>
-						<th></th>
-
-					</tr-->
 				<div class="accordion" id="accordionExample"></div>
 				<div class="accordion-item">
 					<h2 class="accordion-header" id="headingOne">
