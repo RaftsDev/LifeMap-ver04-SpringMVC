@@ -38,6 +38,8 @@
 				<h2>To Do list of user's tasks</h2>
 			</div>
 
+
+
 			<div id="accordion-outer-box">
 
 				<div class="accordion" id="accordionExample"></div>
@@ -53,10 +55,13 @@
 						style="list-style-type: none;">
 
 						<c:forEach var="tempUserTask" items="${userTasks}">
-							<li class="accordion-body">${tempUserTask.shortDesc}</li>
+							<li class="accordion-body">edit|${tempUserTask.id}|${tempUserTask.branch.id}|${tempUserTask.shortDesc}|delete</li>
 						</c:forEach>
 					</ul>
 				</div>
+
+
+
 
 				<div class="accordion-item">
 					<h2 class="accordion-header" id="headingTwo">
