@@ -61,7 +61,8 @@
 							programming</button>
 					</h2>
 					<ul id="collapseOne" class="accordion-collapse collapse show"
-						aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+						aria-labelledby="headingOne" data-bs-parent="#accordionExample"
+						style="list-style-type: none;">
 
 						<c:forEach var="tempUserTask" items="${userTasks}">
 							<li class="accordion-body">${tempUserTask.shortDesc}</li>
