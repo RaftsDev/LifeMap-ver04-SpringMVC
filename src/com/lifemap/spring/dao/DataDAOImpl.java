@@ -1,6 +1,10 @@
 package com.lifemap.spring.dao;
 
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -32,65 +36,58 @@ public class DataDAOImpl implements DataDAO {
 	}
 
 	@Override
-	public List<Tasks> getUserTasks(int userId) {
+	public Map<String, Collection> getUserTasks(int userId) {
 		// TODO Auto-generated method stub
-		
+
 		Session currentSession = sessionFactory.getCurrentSession();
-		
-		//get the current user
-		//Users currentUser = currentSession.get(Users.class, userId);
-		
-		
-		
-		/*Tasks logTask = currentSession.get(Tasks.class, 1002);
-		
-		List<Tasks> currentUserTasks = null;
-		currentUserTasks.add(logTask);*/
-		
-		
-		//get all branches of current user
-		
-		//Query<Branches> theQuery = currentSession.createQuery("from Branches B where B.user.id="+userId, Branches.class);
-		
-		//get all branches in ordered way
-		Query<Branches> theQuery = currentSession.createQuery("from Branches B where B.user.id="+userId+" order by id", Branches.class);
-		//Query<Branches> theQuery = currentSession.createQuery("from Branches", Branches.class);
+
+		// get the current user
+		// Users currentUser = currentSession.get(Users.class, userId);
+
+		/*
+		 * Tasks logTask = currentSession.get(Tasks.class, 1002);
+		 * 
+		 * List<Tasks> currentUserTasks = null; currentUserTasks.add(logTask);
+		 */
+
+		// get all branches of current user
+
+		// Query<Branches> theQuery = currentSession.createQuery("from Branches B where
+		// B.user.id="+userId, Branches.class);
+
+		// get all branches in ordered way
+		Query<Branches> theQuery = currentSession
+				.createQuery("from Branches B where B.user.id=" + userId + " order by id", Branches.class);
+		// Query<Branches> theQuery = currentSession.createQuery("from Branches",
+		// Branches.class);
 		List<Branches> branches = theQuery.getResultList();
-		
-		//Branches branch = currentSession.get(Branches.class, 101);
-		
-		
-		//get tasks from current user's branches 
-		
-		
-		//Get all tasks from all users
-		//List<Tasks> currentUserTasks = branches.get(1).getTasks();
-		//Query<Tasks> theQueryUsers = currentSession.createQuery("from Tasks", Tasks.class);
-		//List<Tasks> allTasks = theQueryUsers.getResultList();
-		
-		//if(!branches.isEmpty()) {
-		List<Tasks> currentUserTasks = branches.get(0).getTasks();
-			for (int i=1; i<branches.size(); i++) {
-				
-				//get element tasks from array
-				List<Tasks> tempTask = branches.get(i).getTasks();
-				currentUserTasks.addAll(tempTask);
-				//List<Tasks> currentUserTasks;
-				//Check if branch has any task
-				//if(tempTasks != null) {
-				
-				//Loop over branches
-				/*for(int j=0; j<tempTask.size(); j++) {
-					if(tempTasks.getId() == branches.get(j).getId()) {
-						currentUserTasks.add(tempTasks);
-					}*/
-				}
-					
-					//currentUserTasks.addAll(tempTasks);
-				
-		
-		return currentUserTasks;
-}
+
+		// Branches branch = currentSession.get(Branches.class, 101);
+
+		// get tasks from current user's branches
+
+		// Get all tasks from all users
+		// List<Tasks> currentUserTasks = branches.get(1).getTasks();
+		// Query<Tasks> theQueryUsers = currentSession.createQuery("from Tasks",
+		// Tasks.class);
+		// List<Tasks> allTasks = theQueryUsers.getResultList();
+
+		// if(!branches.isEmpty()) {
+		List<Tasks> userTasks = branches.get(0).getTasks();
+		for (int i = 1; i < branches.size(); i++) {
+
+			// get element tasks from array
+			List<Tasks> tempTask = branches.get(i).getTasks();
+			userTasks.addAll(tempTask);
+
+		}
+
+		// HashMap for transfer data to Controller
+		Map<String, Collection> userTasksBranches = new HashMap();
+		userTasksBranches.put("userTasks", userTasks);
+
+		return userTasksBranches;
+	}
 
 	@Override
 	public List<Users> getUsers() {
@@ -107,14 +104,15 @@ public class DataDAOImpl implements DataDAO {
 	@Override
 	public List<Branches> getBranches() {
 		// TODO Auto-generated method stub
-		
+
 		Session currentSession = sessionFactory.getCurrentSession();
-		
+
 		Query<Branches> theQuery = currentSession.createQuery("from Branches", Branches.class);
-		//Query<Branches> theQuery = currentSession.createQuery("from Branches B where B.user.id=100", Branches.class);
-		
+		// Query<Branches> theQuery = currentSession.createQuery("from Branches B where
+		// B.user.id=100", Branches.class);
+
 		List<Branches> branches = theQuery.getResultList();
-		
+
 		return branches;
 	}
 

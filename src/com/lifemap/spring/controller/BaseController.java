@@ -1,6 +1,8 @@
 package com.lifemap.spring.controller;
 
+import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -44,15 +46,11 @@ public class BaseController {
 		
 		int currentUserId = 100;
 		
+		//get HashMap from DAO
+		Map<String, Collection> theUserTasks = dataService.getUserTasks(currentUserId);
 		
-		List<Tasks> theUserTasks = dataService.getUserTasks(currentUserId);
 		
-		/*if(theUserTasks != null) {
-			theModel.addAttribute("userTasks", theUserTasks);
-		}else {
-			theModel.addAttribute("userTasks", "No data");
-		}*/
-		theModel.addAttribute("userTasks", theUserTasks);
+		theModel.addAttribute("userTasks", theUserTasks.get("userTasks"));
 		
 		
 		return "user-tasks";

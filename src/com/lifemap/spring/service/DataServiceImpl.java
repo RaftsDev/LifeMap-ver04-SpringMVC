@@ -1,6 +1,8 @@
 package com.lifemap.spring.service;
 
+import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,7 +29,7 @@ public class DataServiceImpl implements DataService {
 
 	@Override
 	@Transactional
-	public List<Tasks> getUserTasks(int userId) {
+	public Map<String, Collection> getUserTasks(int userId) {
 		// TODO Auto-generated method stub
 		
 		
