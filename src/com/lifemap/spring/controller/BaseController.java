@@ -87,6 +87,14 @@ public class BaseController {
 		return "all-branches";
 	}
 	
+	@GetMapping("/deleteTask")
+	public String deleteTask(@RequestParam("taskId") int theId) {
+		
+		dataService.deleteTask(theId);
+		
+		return "redirect:/userTasks";
+	}
+	
 	/*
 	
 	@GetMapping("/showFormForAdd")

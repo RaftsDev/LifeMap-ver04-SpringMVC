@@ -18,5 +18,6 @@ public interface DataDAO {
 
 	public List<Branches> getBranches();
 
+	public void deleteTask(int theId);
 
 }

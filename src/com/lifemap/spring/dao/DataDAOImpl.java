@@ -133,5 +133,18 @@ public class DataDAOImpl implements DataDAO {
 
 		return branches;
 	}
+	
+	@Override
+	public void deleteTask(int theId) {
+		
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		Query theQuery = 
+				currentSession.createQuery("delete from Tasks where id=:tasksId");
+		theQuery.setParameter("tasksId",theId);
+		
+		theQuery.executeUpdate();
+		
+	}
 
 }

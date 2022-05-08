@@ -67,8 +67,18 @@
 							aria-labelledby="heading${tempUserBranch.getKey().id}"
 							data-bs-parent="#accordionExample" style="list-style-type: none;">
 							<!--  Internal loop -->
-							<c:forEach var="tempUserTask" items="${tempUserBranch.getValue()}">
-								<li class="accordion-body"><a href="allTasks">edit</a>|${tempUserTask.id}|${tempUserTask.branch.id}|${tempUserTask.shortDesc}|delete</li>
+							<c:forEach var="tempUserTask"
+								items="${tempUserBranch.getValue()}">
+								<c:url var="updateLink" value="/showFormForUpdate">
+									<c:param name="taskId" value="${tempUserTask.id}" />
+								</c:url>
+
+								<c:url var="deleteLink" value="/deleteTask">
+									<c:param name="taskId" value="${tempUserTask.id}" />
+								</c:url>
+								<li class="accordion-body"><a href="${updateLink}">edit</a>|${tempUserTask.id}|${tempUserTask.shortDesc}|<a
+									href="${deleteLink}"
+									onclick="if (!(confirm('Are you sure you want to delete this customer?'))) return false">Delete</a></li>
 							</c:forEach>
 						</ul>
 					</div>

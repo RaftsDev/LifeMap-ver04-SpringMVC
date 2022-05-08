@@ -50,4 +50,11 @@ public class DataServiceImpl implements DataService {
 		return dataDAO.getBranches();
 	}
 
+	@Override
+	@Transactional
+	public void deleteTask(int theId) {
+		// TODO Auto-generated method stub
+		dataDAO.deleteTask(theId);
+	}
+
 }
