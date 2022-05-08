@@ -43,31 +43,38 @@
 			<div id="accordion-outer-box">
 
 				<div class="accordion" id="accordionExample"></div>
-				
-				
+
+
 				<!--  External loop -->
 				<c:forEach var="tempUserBranch" items="${userBranches}">
-				<div class="accordion-item">
-					<h2 class="accordion-header" id="heading${tempUserBranch.id}">
-					<a href="allTasks">UPDATE</a>
-						<button class="accordion-button" type="button"
-							data-bs-toggle="collapse" data-bs-target="#collapse${tempUserBranch.id}"
-							aria-expanded="true" aria-controls="collapse${tempUserBranch.id}"> | ${tempUserBranch.shortDesc} | DELETE</button>
-					</h2>
-					
-					<ul id="collapse${tempUserBranch.id}" class="accordion-collapse collapse show"
-						aria-labelledby="heading${tempUserBranch.id}" data-bs-parent="#accordionExample"
-						style="list-style-type: none;">
+					<div class="accordion-item">
+						<h2 class="accordion-header" id="heading${tempUserBranch.id}">
 
-						<c:forEach var="tempUserTask" items="${userTasks}">
-							<li class="accordion-body">edit|${tempUserTask.id}|${tempUserTask.branch.id}|${tempUserTask.shortDesc}|delete</li>
-						</c:forEach>
-					</ul>
-				</div>
+							<a href="allTasks" style="font-size: 0.5em;">update</a> <a
+								href="allTasks" style="font-size: 0.5em;">delete</a>
+							<button class="accordion-button" type="button"
+								data-bs-toggle="collapse"
+								data-bs-target="#collapse${tempUserBranch.id}"
+								aria-expanded="true"
+								aria-controls="collapse${tempUserBranch.id}">|
+								${tempUserBranch.shortDesc} | DELETE</button>
+
+						</h2>
+
+						<ul id="collapse${tempUserBranch.id}"
+							class="accordion-collapse collapse show"
+							aria-labelledby="heading${tempUserBranch.id}"
+							data-bs-parent="#accordionExample" style="list-style-type: none;">
+
+							<c:forEach var="tempUserTask" items="${userTasks}">
+								<li class="accordion-body"><a href="allTasks">edit</a>|${tempUserTask.id}|${tempUserTask.branch.id}|${tempUserTask.shortDesc}|delete</li>
+							</c:forEach>
+						</ul>
+					</div>
 				</c:forEach>
-				
 
-				
+
+
 
 
 
