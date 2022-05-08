@@ -58,7 +58,7 @@
 								data-bs-target="#collapse${tempUserBranch.getKey().id}"
 								aria-expanded="true"
 								aria-controls="collapse${tempUserBranch.getKey().id}">|
-								${tempUserBranch.getKey().shortDesc} | DELETE</button>
+								${tempUserBranch.getKey().shortDesc}</button>
 
 						</h2>
 
