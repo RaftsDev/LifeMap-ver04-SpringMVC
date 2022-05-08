@@ -1,6 +1,7 @@
 package com.lifemap.spring.controller;
 
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -118,11 +119,31 @@ public class BaseController {
 	@GetMapping("/addTask")
 	public String formAddTask(@RequestParam("branchId") int theId, Model theModel) {
 		
-		Branches theBranch = dataService.getBranch(theId);
+		/*Branches theBranch = dataService.getBranch(theId);*/
 		
-		theModel.addAttribute("branch", theBranch);
+		Tasks theTask = new Tasks();
+	
+		/*Map<Branches, Tasks> tmpBranchTask = new HashMap<Branches, Tasks>();
+		
+		tmpBranchTask.put(theBranch, task);
+		
+		theModel.addAttribute("tmpBranchTask", tmpBranchTask);*/
+		
+		theModel.addAttribute("task",theTask);
 		
 		return "add-task-form";
+	}
+	
+	@PostMapping("/saveNewTask")
+	public String saveNewTask(@ModelAttribute("task") Tasks theTask) {
+		
+		Branches theBranch = dataService.getBranch(101);
+		
+		theTask.setBranch(theBranch);
+				
+		dataService.saveTask(theTask);
+		
+		return "redirect:/userTasks";
 	}
 	
 	/*

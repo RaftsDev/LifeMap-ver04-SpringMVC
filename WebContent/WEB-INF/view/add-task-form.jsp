@@ -13,31 +13,27 @@
 		<div id="header">
 			<h2>Add task</h2>
 		</div>
-	</div>
-	<div id="container">
 
-		<form:form action="saveTask" modelAttribute="branch"
-			method="POST">
-			
-			<!  form:hidden path="id"/>
-			
+		<form:form action="saveNewTask" modelAttribute="task" method="POST">
 			<table>
-				<tbody>
-					<tr>
-						<td><label>Group Id</label></td>
-						<td><form:input path="id" /></td>
-					</tr>
-					<tr>
-						<td><label>Description</label></td>
-						<td><form:input path="shortDesc" /></td>
-					</tr>
-					<tr>
-						<td><label></label></td>
-						<td><input type="submit" value="Save" class="save"/></td>
-					</tr>
-				</tbody>
+				<tr>
+					<td><label>Description:</label></td>
+					<td><form:input path="shortDesc" />
+						</form></td>
+				</tr>
+				<tr>
+					<td><label>Urgency level:</label></td>
+					<td><form:input path="urgencyLevel" />
+						</form></td>
+				</tr>
+				<tr>
+					<td><label></label></td>
+					<td><input type="submit" value="Save" path="urgencyLevel" />
+						</form></td>
+				</tr>
 			</table>
 		</form:form>
 	</div>
+
 </body>
 </html>
