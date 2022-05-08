@@ -23,4 +23,6 @@ public interface DataService {
 	public Tasks getTask(int theId);
 
 	public void saveTask(Tasks theTask);
+
+	public Branches getBranch(int theId);
 }

@@ -24,4 +24,6 @@ public interface DataDAO {
 
 	public void saveTask(Tasks theTask);
 
+	public Branches getBranch(int theId);
+
 }

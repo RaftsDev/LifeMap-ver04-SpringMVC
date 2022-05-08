@@ -71,4 +71,11 @@ public class DataServiceImpl implements DataService {
 		dataDAO.saveTask(theTask);
 	}
 
+	@Override
+	@Transactional
+	public Branches getBranch(int theId) {
+		// TODO Auto-generated method stub
+		return dataDAO.getBranch(theId);
+	}
+
 }

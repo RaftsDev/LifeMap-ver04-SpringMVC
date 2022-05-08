@@ -16,7 +16,7 @@ import org.springframework.stereotype.Repository;
 import com.lifemap.spring.entity.Branches;
 import com.lifemap.spring.entity.Tasks;
 import com.lifemap.spring.entity.Users;
-import com.luv2code.springdemo.entity.Customer;
+
 
 @Repository
 public class DataDAOImpl implements DataDAO {
@@ -163,6 +163,15 @@ public class DataDAOImpl implements DataDAO {
 
 		currentSession.saveOrUpdate(theTask);
 		
+	}
+
+	@Override
+	public Branches getBranch(int theId) {
+		// TODO Auto-generated method stub
+		Session currentSession = sessionFactory.getCurrentSession();
+
+		Branches theBranch = currentSession.get(Branches.class, theId);
+		return theBranch;
 	}
 
 }

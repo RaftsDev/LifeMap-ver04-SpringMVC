@@ -104,7 +104,7 @@ public class BaseController {
 		
 		theModel.addAttribute("task", theTask);
 		
-		return "task-form";
+		return "update-task-form";
 	}
 	
 	@PostMapping("/saveTask")
@@ -113,6 +113,16 @@ public class BaseController {
 		dataService.saveTask(theTask);
 		
 		return "redirect:/userTasks";
+	}
+	
+	@GetMapping("/addTask")
+	public String formAddTask(@RequestParam("branchId") int theId, Model theModel) {
+		
+		Branches theBranch = dataService.getBranch(theId);
+		
+		theModel.addAttribute("branch", theBranch);
+		
+		return "add-task-form";
 	}
 	
 	/*

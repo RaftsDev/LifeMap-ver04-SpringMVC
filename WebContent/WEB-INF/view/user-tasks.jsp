@@ -47,17 +47,24 @@
 
 				<!--  External loop -->
 				<c:forEach var="tempUserBranch" items="${userBranchesTasks}">
+
+					<!-- create url for getting branch id -->
+					<c:url var="addTaskLink" value="/addTask">
+						<c:param name="branchId" value="${tempUserBranch.getKey().id}" />
+					</c:url>
 					<div class="accordion-item">
 						<h2 class="accordion-header"
 							id="heading${tempUserBranch.getKey().id}">
 
 							<a href="allTasks" style="font-size: 0.5em;">update</a> <a
-								href="allTasks" style="font-size: 0.5em;">delete</a>
+								href="allTasks" style="font-size: 0.5em;">delete</a> <a
+								href="${addTaskLink}" style="font-size: 0.5em;">add task</a>
+
 							<button class="accordion-button" type="button"
 								data-bs-toggle="collapse"
 								data-bs-target="#collapse${tempUserBranch.getKey().id}"
 								aria-expanded="true"
-								aria-controls="collapse${tempUserBranch.getKey().id}">|
+								aria-controls="collapse${tempUserBranch.getKey().id}">|${tempUserBranch.getKey().id}|
 								${tempUserBranch.getKey().shortDesc}</button>
 
 						</h2>
