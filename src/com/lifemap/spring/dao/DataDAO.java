@@ -20,4 +20,8 @@ public interface DataDAO {
 
 	public void deleteTask(int theId);
 
+	public Tasks getTask(int theId);
+
+	public void saveTask(Tasks theTask);
+
 }

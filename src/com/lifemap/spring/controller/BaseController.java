@@ -95,6 +95,26 @@ public class BaseController {
 		return "redirect:/userTasks";
 	}
 	
+	
+	
+	@GetMapping("/updateTask")
+	public String showFormForUpdate(@RequestParam("taskId") int theId, Model theModel) {
+		
+		Tasks theTask = dataService.getTask(theId);
+		
+		theModel.addAttribute("task", theTask);
+		
+		return "task-form";
+	}
+	
+	@PostMapping("/saveTask")
+	public String saveTask(@ModelAttribute("task") Tasks theTask) {
+		
+		dataService.saveTask(theTask);
+		
+		return "redirect:/userTasks";
+	}
+	
 	/*
 	
 	@GetMapping("/showFormForAdd")

@@ -19,4 +19,8 @@ public interface DataService {
 	public List<Branches> getBranches();
 	
 	public void deleteTask(int theId);
+
+	public Tasks getTask(int theId);
+
+	public void saveTask(Tasks theTask);
 }

@@ -16,6 +16,7 @@ import org.springframework.stereotype.Repository;
 import com.lifemap.spring.entity.Branches;
 import com.lifemap.spring.entity.Tasks;
 import com.lifemap.spring.entity.Users;
+import com.luv2code.springdemo.entity.Customer;
 
 @Repository
 public class DataDAOImpl implements DataDAO {
@@ -133,17 +134,34 @@ public class DataDAOImpl implements DataDAO {
 
 		return branches;
 	}
-	
+
 	@Override
 	public void deleteTask(int theId) {
-		
+
 		Session currentSession = sessionFactory.getCurrentSession();
-		
-		Query theQuery = 
-				currentSession.createQuery("delete from Tasks where id=:tasksId");
-		theQuery.setParameter("tasksId",theId);
-		
+
+		Query theQuery = currentSession.createQuery("delete from Tasks where id=:tasksId");
+		theQuery.setParameter("tasksId", theId);
+
 		theQuery.executeUpdate();
+
+	}
+
+	@Override
+	public Tasks getTask(int theId) {
+		// TODO Auto-generated method stub
+		Session currentSession = sessionFactory.getCurrentSession();
+
+		Tasks theTask = currentSession.get(Tasks.class, theId);
+		return theTask;
+	}
+
+	@Override
+	public void saveTask(Tasks theTask) {
+		// TODO Auto-generated method stub
+		Session currentSession = sessionFactory.getCurrentSession();
+
+		currentSession.saveOrUpdate(theTask);
 		
 	}
 

@@ -69,7 +69,7 @@
 							<!--  Internal loop -->
 							<c:forEach var="tempUserTask"
 								items="${tempUserBranch.getValue()}">
-								<c:url var="updateLink" value="/showFormForUpdate">
+								<c:url var="updateLink" value="/updateTask">
 									<c:param name="taskId" value="${tempUserTask.id}" />
 								</c:url>
 
@@ -78,7 +78,7 @@
 								</c:url>
 								<li class="accordion-body"><a href="${updateLink}">edit</a>|${tempUserTask.id}|${tempUserTask.shortDesc}|<a
 									href="${deleteLink}"
-									onclick="if (!(confirm('Are you sure you want to delete this customer?'))) return false">Delete</a></li>
+									onclick="if (!(confirm('Delete this task?'))) return false">Delete</a></li>
 							</c:forEach>
 						</ul>
 					</div>

@@ -24,16 +24,12 @@
 			<table>
 				<tbody>
 					<tr>
-						<td><label>First name:</label></td>
-						<td><form:input path="shortDesk" /></td>
+						<td><label>Group Id</label></td>
+						<td><form:input path="branch.id" /></td>
 					</tr>
 					<tr>
-						<td><label>Last name:</label></td>
-						<td><form:input path="lastName" /></td>
-					</tr>
-					<tr>
-						<td><label>Email:</label></td>
-						<td><form:input path="email" /></td>
+						<td><label>Description</label></td>
+						<td><form:input path="shortDesc" /></td>
 					</tr>
 					<tr>
 						<td><label></label></td>

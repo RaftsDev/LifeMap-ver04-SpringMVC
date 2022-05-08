@@ -57,4 +57,18 @@ public class DataServiceImpl implements DataService {
 		dataDAO.deleteTask(theId);
 	}
 
+	@Override
+	@Transactional
+	public Tasks getTask(int theId) {
+		// TODO Auto-generated method stub
+		return dataDAO.getTask(theId);
+	}
+
+	@Override
+	@Transactional
+	public void saveTask(Tasks theTask) {
+		// TODO Auto-generated method stub
+		dataDAO.saveTask(theTask);
+	}
+
 }
