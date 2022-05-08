@@ -49,9 +49,10 @@
 				<c:forEach var="tempUserBranch" items="${userBranches}">
 				<div class="accordion-item">
 					<h2 class="accordion-header" id="heading${tempUserBranch.id}">
+					<a href="allTasks">UPDATE</a>
 						<button class="accordion-button" type="button"
 							data-bs-toggle="collapse" data-bs-target="#collapse${tempUserBranch.id}"
-							aria-expanded="true" aria-controls="collapse${tempUserBranch.id}">${tempUserBranch.shortDesc}</button>
+							aria-expanded="true" aria-controls="collapse${tempUserBranch.id}"> | ${tempUserBranch.shortDesc} | DELETE</button>
 					</h2>
 					
 					<ul id="collapse${tempUserBranch.id}" class="accordion-collapse collapse show"
