@@ -12,7 +12,7 @@ public interface DataService {
 
 	public List<Tasks> getTasks();
 	
-	public Map<String,Collection> getUserTasks(int userId);
+	public Map<Branches,Collection> getUserTasks(int userId);
 
 	public List<Users> getUsers();
 

@@ -29,7 +29,7 @@ public class DataServiceImpl implements DataService {
 
 	@Override
 	@Transactional
-	public Map<String, Collection> getUserTasks(int userId) {
+	public Map<Branches, Collection> getUserTasks(int userId) {
 		// TODO Auto-generated method stub
 		
 		

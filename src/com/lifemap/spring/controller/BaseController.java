@@ -13,12 +13,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.lifemap.spring.dao.CustomerDAO;
 import com.lifemap.spring.entity.Branches;
-import com.lifemap.spring.entity.Customer;
 import com.lifemap.spring.entity.Tasks;
 import com.lifemap.spring.entity.Users;
-import com.lifemap.spring.service.CustomerService;
 import com.lifemap.spring.service.DataService;
 
 @Controller
@@ -47,11 +44,11 @@ public class BaseController {
 		int currentUserId = 100;
 		
 		//get HashMap from DAO
-		Map<String, Collection> theUserTasks = dataService.getUserTasks(currentUserId);
+		Map<Branches, Collection> theUserBranchesTasks = dataService.getUserTasks(currentUserId);
 		
 		//transfer tasks and branches to view file
-		theModel.addAttribute("userTasks", theUserTasks.get("userTasks"));
-		theModel.addAttribute("userBranches",theUserTasks.get("userBranches"));
+		//theModel.addAttribute("userTasks", theUserTasks.get("userTasks"));
+		theModel.addAttribute("userBranchesTasks",theUserBranchesTasks);
 		
 		
 		return "user-tasks";

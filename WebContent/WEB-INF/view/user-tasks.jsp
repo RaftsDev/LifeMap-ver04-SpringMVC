@@ -46,27 +46,28 @@
 
 
 				<!--  External loop -->
-				<c:forEach var="tempUserBranch" items="${userBranches}">
+				<c:forEach var="tempUserBranch" items="${userBranchesTasks}">
 					<div class="accordion-item">
-						<h2 class="accordion-header" id="heading${tempUserBranch.id}">
+						<h2 class="accordion-header"
+							id="heading${tempUserBranch.getKey().id}">
 
 							<a href="allTasks" style="font-size: 0.5em;">update</a> <a
 								href="allTasks" style="font-size: 0.5em;">delete</a>
 							<button class="accordion-button" type="button"
 								data-bs-toggle="collapse"
-								data-bs-target="#collapse${tempUserBranch.id}"
+								data-bs-target="#collapse${tempUserBranch.getKey().id}"
 								aria-expanded="true"
-								aria-controls="collapse${tempUserBranch.id}">|
-								${tempUserBranch.shortDesc} | DELETE</button>
+								aria-controls="collapse${tempUserBranch.getKey().id}">|
+								${tempUserBranch.getKey().shortDesc} | DELETE</button>
 
 						</h2>
 
-						<ul id="collapse${tempUserBranch.id}"
+						<ul id="collapse${tempUserBranch.getKey().id}"
 							class="accordion-collapse collapse show"
-							aria-labelledby="heading${tempUserBranch.id}"
+							aria-labelledby="heading${tempUserBranch.getKey().id}"
 							data-bs-parent="#accordionExample" style="list-style-type: none;">
-
-							<c:forEach var="tempUserTask" items="${userTasks}">
+							<!--  Internal loop -->
+							<c:forEach var="tempUserTask" items="${tempUserBranch.getValue()}">
 								<li class="accordion-body"><a href="allTasks">edit</a>|${tempUserTask.id}|${tempUserTask.branch.id}|${tempUserTask.shortDesc}|delete</li>
 							</c:forEach>
 						</ul>

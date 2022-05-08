@@ -37,7 +37,7 @@ public class DataDAOImpl implements DataDAO {
 	}
 
 	@Override
-	public Map<String, Collection> getUserTasks(int userId) {
+	public Map<Branches, Collection> getUserTasks(int userId) {
 		// TODO Auto-generated method stub
 
 		Session currentSession = sessionFactory.getCurrentSession();
@@ -74,25 +74,35 @@ public class DataDAOImpl implements DataDAO {
 		// List<Tasks> allTasks = theQueryUsers.getResultList();
 
 		// if(!branches.isEmpty()) {
-		List<Tasks> userTasks = branches.get(0).getTasks();
-		for (int i = 1; i < branches.size(); i++) {
-
-			// get element tasks from array
-			List<Tasks> tempTask = branches.get(i).getTasks();
-			userTasks.addAll(tempTask);
-
-		}
-		
-		//LinkedHashSet for unique value of branches
-		LinkedHashSet<Branches> userBranches = new LinkedHashSet();
-		 for (Tasks tempTask : userTasks) {
-			 userBranches.add(tempTask.getBranch());
-		 }
 
 		// HashMap for transfer data to Controller
-		Map<String, Collection> userTasksBranches = new HashMap();
-		userTasksBranches.put("userTasks", userTasks);
-		userTasksBranches.put("userBranches", userBranches);
+		Map<Branches, Collection> userTasksBranches = new HashMap();
+
+		/*
+		 * List<Tasks> userTasks = branches.get(0).getTasks();
+		 * 
+		 * for (int i = 1; i < branches.size(); i++) {
+		 * 
+		 * // get element tasks from array List<Tasks> tempTask =
+		 * branches.get(i).getTasks(); userTasks.addAll(tempTask);
+		 * 
+		 * }
+		 */
+
+		// Iterate through List of branches and put tasks into HashMap
+		for (Branches branch : branches) {
+
+			if (!branch.getTasks().isEmpty()) {
+				userTasksBranches.put(branch, branch.getTasks());
+			}
+
+		}
+
+		// LinkedHashSet for unique value of branches
+		/*
+		 * LinkedHashSet<Branches> userBranches = new LinkedHashSet(); for (Tasks
+		 * tempTask : userTasks) { userBranches.add(tempTask.getBranch()); }
+		 */
 
 		return userTasksBranches;
 	}
