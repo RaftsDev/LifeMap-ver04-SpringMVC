@@ -48,14 +48,14 @@
 				<!--  External loop -->
 				<c:forEach var="tempUserBranch" items="${userBranches}">
 				<div class="accordion-item">
-					<h2 class="accordion-header" id="headingOne">
+					<h2 class="accordion-header" id="heading${tempUserBranch.id}">
 						<button class="accordion-button" type="button"
-							data-bs-toggle="collapse" data-bs-target="#collapseOne"
-							aria-expanded="true" aria-controls="collapseOne">${tempUserBranch.shortDesc}</button>
+							data-bs-toggle="collapse" data-bs-target="#collapse${tempUserBranch.id}"
+							aria-expanded="true" aria-controls="collapse${tempUserBranch.id}">${tempUserBranch.shortDesc}</button>
 					</h2>
 					
-					<ul id="collapseOne" class="accordion-collapse collapse show"
-						aria-labelledby="headingOne" data-bs-parent="#accordionExample"
+					<ul id="collapse${tempUserBranch.id}" class="accordion-collapse collapse show"
+						aria-labelledby="heading${tempUserBranch.id}" data-bs-parent="#accordionExample"
 						style="list-style-type: none;">
 
 						<c:forEach var="tempUserTask" items="${userTasks}">
