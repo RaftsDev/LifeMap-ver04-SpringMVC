@@ -41,5 +41,36 @@ footer{
 	margin: auto 0;
 }
 
+div.button-update-container{
+	display:inline-block;
+	width:13%;
+	
+}
+
+div.button-del-container{
+	display:inline-block;
+	width:13%;
+}
+
+div.element-description{
+	display:inline-block;
+	width: 70%;
+}
+
+div.branch-left-fill-box{
+	display:block;
+	width:75;
+	heigh: 5vh;
+}
+
+div.branch-action-box{
+	display: inline-block;
+	margin: 0 1% 0 auto;
+}
+
+div.branch-action-outter{
+	text-align:right;
+}
+
 
 

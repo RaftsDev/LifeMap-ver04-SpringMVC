@@ -55,10 +55,14 @@
 					<div class="accordion-item">
 						<h2 class="accordion-header"
 							id="heading${tempUserBranch.getKey().id}">
-
-							<a href="allTasks" style="font-size: 0.5em;">update</a> <a
-								href="allTasks" style="font-size: 0.5em;">delete</a> <a
-								href="${addTaskLink}" style="font-size: 0.5em;">add task</a>
+							<div class="branch-action-outter">
+								<div class="branch-left-fill-box"> </div>
+								<div class="branch-action-box">
+									<a href="allTasks" style="font-size: 0.5em;">Edit</a> <a
+										href="allTasks" style="font-size: 0.5em;">Delete</a> <a
+										href="${addTaskLink}" style="font-size: 0.5em;">Add task</a>
+								</div>
+							</div>
 
 							<button class="accordion-button" type="button"
 								data-bs-toggle="collapse"
@@ -83,9 +87,14 @@
 								<c:url var="deleteLink" value="/deleteTask">
 									<c:param name="taskId" value="${tempUserTask.id}" />
 								</c:url>
-								<li class="accordion-body">${tempUserTask.shortDesc}|<a href="${updateLink}">edit</a>|<a
-									href="${deleteLink}"
-									onclick="if (!(confirm('Delete this task?'))) return false">Delete</a></li>
+								<li class="accordion-body"><div class="element-description">${tempUserTask.shortDesc}</div>
+									<div class="button-update-container">
+										<a href="${updateLink}">Edit</a>
+									</div>
+									<div class="button-del-container">
+										<a href="${deleteLink}"
+											onclick="if (!(confirm('Delete this task?'))) return false">Delete</a>
+									</div></li>
 							</c:forEach>
 						</ul>
 					</div>
