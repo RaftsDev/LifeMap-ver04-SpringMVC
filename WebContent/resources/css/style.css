@@ -33,7 +33,9 @@ footer{
   opacity: 0.75; */
 } 
 
-
+#header{
+	text-align: center;
+}
 
 #accordion-outer-box{
 	margin: auto 0;
