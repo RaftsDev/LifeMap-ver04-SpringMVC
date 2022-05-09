@@ -64,7 +64,7 @@
 								data-bs-toggle="collapse"
 								data-bs-target="#collapse${tempUserBranch.getKey().id}"
 								aria-expanded="true"
-								aria-controls="collapse${tempUserBranch.getKey().id}">|${tempUserBranch.getKey().id}|
+								aria-controls="collapse${tempUserBranch.getKey().id}">
 								${tempUserBranch.getKey().shortDesc}</button>
 
 						</h2>
@@ -83,7 +83,7 @@
 								<c:url var="deleteLink" value="/deleteTask">
 									<c:param name="taskId" value="${tempUserTask.id}" />
 								</c:url>
-								<li class="accordion-body"><a href="${updateLink}">edit</a>|${tempUserTask.id}|${tempUserTask.shortDesc}|<a
+								<li class="accordion-body">${tempUserTask.shortDesc}|<a href="${updateLink}">edit</a>|<a
 									href="${deleteLink}"
 									onclick="if (!(confirm('Delete this task?'))) return false">Delete</a></li>
 							</c:forEach>
