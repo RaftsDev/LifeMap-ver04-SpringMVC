@@ -20,13 +20,14 @@
 			method="POST">
 			
 			<form:hidden path="id"/>
+			<form:hidden path="branch.id"/>
 			
 			<table>
 				<tbody>
-					<tr>
+					<!-- tr>
 						<td><label>Group Id</label></td>
 						<td><form:input path="branch.id" /></td>
-					</tr>
+					</tr-->
 					<tr>
 						<td><label>Description</label></td>
 						<td><form:input path="shortDesc" /></td>

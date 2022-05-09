@@ -119,17 +119,23 @@ public class BaseController {
 	@GetMapping("/addTask")
 	public String formAddTask(@RequestParam("branchId") int theId, Model theModel) {
 		
-		/*Branches theBranch = dataService.getBranch(theId);*/
+		Branches theBranch = dataService.getBranch(theId);
 		
 		Tasks theTask = new Tasks();
 	
-		/*Map<Branches, Tasks> tmpBranchTask = new HashMap<Branches, Tasks>();
+		//Map<Branches, Tasks> tmpBranchTask = new HashMap<Branches, Tasks>();
 		
-		tmpBranchTask.put(theBranch, task);
+		//tmpBranchTask.put(theBranch, theTask);
 		
-		theModel.addAttribute("tmpBranchTask", tmpBranchTask);*/
+		/*theModel.addAttribute("branch", theBranch);
 		
-		theModel.addAttribute("task",theTask);
+		theModel.addAttribute("task",theTask);*/
+		
+		//theModel.addAttribute("tmpBranchTask", tmpBranchTask);
+		
+		theTask.setBranch(theBranch);
+		
+		theModel.addAttribute("task", theTask);
 		
 		return "add-task-form";
 	}
@@ -137,9 +143,9 @@ public class BaseController {
 	@PostMapping("/saveNewTask")
 	public String saveNewTask(@ModelAttribute("task") Tasks theTask) {
 		
-		Branches theBranch = dataService.getBranch(101);
+		//Branches theBranch = dataService.getBranch(101);
 		
-		theTask.setBranch(theBranch);
+		//theTask.setBranch(theBranch);
 				
 		dataService.saveTask(theTask);
 		

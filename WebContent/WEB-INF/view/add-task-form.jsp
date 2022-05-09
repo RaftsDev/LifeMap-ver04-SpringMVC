@@ -16,6 +16,12 @@
 
 		<form:form action="saveNewTask" modelAttribute="task" method="POST">
 			<table>
+			<form:hidden path="branch.id"/>
+			<!--  tr>
+					<td><label>branch</label></td>
+					<td><form:input path="branch.id" />
+						</form></td>
+				</tr-->
 				<tr>
 					<td><label>Description:</label></td>
 					<td><form:input path="shortDesc" />
@@ -28,7 +34,7 @@
 				</tr>
 				<tr>
 					<td><label></label></td>
-					<td><input type="submit" value="Save" path="urgencyLevel" />
+					<td><input type="submit" value="Save"  />
 						</form></td>
 				</tr>
 			</table>
