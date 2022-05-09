@@ -6,65 +6,38 @@ background: url(../img/kelly-sikkema-2Kx1375-90prc.jpg);
 background-position: center;
 }
 
-/*
-.nav-panel{
-  padding: 0.3% 1%;
-  height: 5vh;
-  background-color: #afafaf;
-  text-align: right;
-  box-shadow: 5px 5px #555555;
-}
 
-.nav-box{
-  display: inline-block;
-  width: 10%;
-  font-size: 2em;
-}
-
-.nav-box:hover{
-  background-color: #bfbfbf;
-  font-size: 2.1em;
-  transition-property:  font-size;
-  transition-duration: 2s;
-}*/
 
 main{
   height: 85vh;
-  text-align: center;
+  /*text-align: center;*/
   /*background-color: #bfbfbf;*/
 }
 
 
-/*
+
+
 footer{
   text-align: right;
-}*/
+}
+
 
 #board-box{
-  display: inline-block;
+  
   width: 33%;
   height: 100%;
-  margin: auto 0%;
+  margin: 0 auto;;
   padding: 1% 0%;
-  text-align: center;
-  background-color: #c0c0c0;
-  opacity: 0.75;
-  
-}
+  /*text-align: center;*/
+ /* background-color: #c0c0c0;
+  opacity: 0.75; */
+} 
+
+
 
 #accordion-outer-box{
 	margin: auto 0;
 }
 
 
-/*
-.task-box-outter{
-  height: 73vh;
-  width: 45%;
-  margin: 0 auto;
-  border: 1px solid #515151;
-  border-radius: 1%;
-  box-shadow: 5px 5px #555555;
 
-
-}*/
