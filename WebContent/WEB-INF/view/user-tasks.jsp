@@ -24,7 +24,7 @@
 		class="navbar navbar-expand-sm bg-secondary navbar-light justify-content-end">
 		
 		 <div class="navbar-header">
-      <a  href="#"><img alt="location on the map" src="${pageContext.request.contextPath}/resources/img/Logo-cut-version-70.png"></a>
+      <a  href="#"><img style="position: relative; right:1430%;" alt="location on the map" src="${pageContext.request.contextPath}/resources/img/Logo-cut-version-70.png"></a>
     </div>
 		<ul class="navbar-nav">
 			<li class="nav-item"><a class="nav-link" href="userTasks">Main</a>

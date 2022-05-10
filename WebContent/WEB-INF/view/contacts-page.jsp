@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-sm bg-secondary navbar-light justify-content-end">
+<!-- nav class="navbar navbar-expand-sm bg-secondary navbar-light justify-content-end">
  <ul class="navbar-nav">
 			<li class="nav-item"><a class="nav-link" href="userTasks">Main</a>
 			</li>
@@ -24,7 +24,24 @@
 			<li class="nav-item"><a class="nav-link" href="aboutPage">About</a>
 			</li>
 		</ul>
-</nav>
+</nav-->
+<nav
+		class="navbar navbar-expand-sm bg-secondary navbar-light justify-content-end">
+		
+		 <div class="navbar-header">
+      <a  href="#"><img style="position: relative; right:1430%;" alt="location on the map" src="${pageContext.request.contextPath}/resources/img/Logo-cut-version-70.png"></a>
+    </div>
+		<ul class="navbar-nav">
+			<li class="nav-item"><a class="nav-link" href="userTasks">Main</a>
+			</li>
+			<li class="nav-item"><a class="nav-link" href="#">Login</a>
+			
+			</li>
+			<li class="nav-item"><a class="nav-link" href="contactPage">Contacts</a>
+			<li class="nav-item"><a class="nav-link" href="aboutPage">About</a>
+			</li>
+		</ul>
+	</nav>
     <main>
 
 <div class="header" style="text-align:center; width:35%; margin:3% auto;"><h5 class="mt-3">
