@@ -183,7 +183,10 @@ public class DataDAOImpl implements DataDAO {
 		Query<Users> theQuery = currentSession
 				.createQuery("from Users U where U.login=" + inputedLogin, Users.class);
 		
+		//createQuery("from Users ")
+		
 		Users theUser = theQuery.getResultList().get(0);
+				
 		return theUser;
 		
 	}

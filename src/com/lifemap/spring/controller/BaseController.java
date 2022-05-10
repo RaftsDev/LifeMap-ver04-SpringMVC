@@ -64,6 +64,16 @@ public class BaseController {
 		String inputedLogin = theUser.getLogin();
 		String inputedPassword = theUser.getPwd();
 		
+		String page = "login-page";
+		
+		if(inputedLogin.equals("John")) {
+			page = "redirect:/userTasks";
+		}
+		
+		if(inputedLogin.equals("Admin")) {
+			page = "redirect:/adminPage";
+		}
+		
 		//Users realUser = dataService.getUserByLogin(inputedLogin);
 		
 		/*if(realUser.getPwd() == inputedPassword) {
@@ -71,7 +81,8 @@ public class BaseController {
 		}*/
 		
 		
-		return "redirect:/userTasks";
+		//return "redirect:/userTasks";
+		return page;
 	}
 	
 	@GetMapping("/userTasks")
@@ -206,43 +217,35 @@ public class BaseController {
 		return "contacts-page";
 	}
 	
-	/*
-	
-	@GetMapping("/showFormForAdd")
-	public String showFormForAdd(Model theModel) {
+	@GetMapping("/adminPage")
+	public String adminPage(Model theModel) {
 		
-		Customer theCustomer = new Customer();
-		theModel.addAttribute("customer", theCustomer);
 		
-		return "customer-form";
+		//get HashMap from DAO
+		List<Users> theUsers = dataService.getUsers();
+		
+		//transfer tasks and branches to view file
+		//theModel.addAttribute("userTasks", theUserTasks.get("userTasks"));
+		theModel.addAttribute("users",theUsers);
+		
+		return "admin-page";
 	}
 	
-	@PostMapping("/saveCustomer")
-	public String saveCustomer(@ModelAttribute("customer") Customer theCustomer) {
-		
-		customerService.saveCustomer(theCustomer);
-		
-		return "redirect:/customer/list";
-	}
 	
-	@GetMapping("/showFormForUpdate")
-	public String showFormForUpdate(@RequestParam("customerId") int theId, Model theModel) {
-		
-		Customer theCustomer = customerService.getCustomer(theId);
-		
-		theModel.addAttribute("customer", theCustomer);
-		
-		return "customer-form";
-	}
 	
-	@GetMapping("/delete")
-	public String deleteCustomer(@RequestParam("customerId") int theId) {
+	@GetMapping("/updateUser")
+	public String updateUser(@RequestParam("userId") int theId, Model theModel) {
 		
-		customerService.deleteCustomer(theId);
 		
-		return "redirect:/customer/list";
+		//get HashMap from DAO
+		Users theUser = dataService.getUser(theId);
+		
+		//transfer tasks and branches to view file
+		//theModel.addAttribute("userTasks", theUserTasks.get("userTasks"));
+		theModel.addAttribute("user",theUser);
+		
+		return "update-user-page";
 	}
-	*/
 	
 }
 
