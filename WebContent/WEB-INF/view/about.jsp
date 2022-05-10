@@ -48,7 +48,7 @@
 
 			<div>
 				<h3><p>We are located:</p>
-				<p>219 Fort Pitt Blvd # 2, Pittsburgh, PA 15222</p> </h3>
+				<p>219 Fort Pitt Blvd # 2, Pittsburgh, PA 15222</p>  </h3>
 			</div>
 			<div><img alt="location on the map" src="${pageContext.request.contextPath}/resources/img/location.png"></div>
 		</div>
