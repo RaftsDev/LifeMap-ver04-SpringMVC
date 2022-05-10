@@ -26,4 +26,6 @@ public interface DataDAO {
 
 	public Branches getBranch(int theId);
 
+	public Users getUserByLogin(String inputedLogin);
+
 }

@@ -50,7 +50,7 @@ public class BaseController {
 	}
 	
 	@PostMapping("/checkLogin")
-	public String checkLogin(@ModelAttribute("user") Users user) {
+	public String checkLogin(@ModelAttribute("user") Users theUser) {
 		
 		//int currentUserId = 100;
 		
@@ -61,10 +61,14 @@ public class BaseController {
 		//theModel.addAttribute("userTasks", theUserTasks.get("userTasks"));
 		//theModel.addAttribute("userBranchesTasks",theUserBranchesTasks);
 		
-		/*String inputedLogin = user.getLogin();
-		String inputedPassword = user.getPwd();
+		String inputedLogin = theUser.getLogin();
+		String inputedPassword = theUser.getPwd();
 		
-		Users realUser = dataService.getUserByLogin(inputedLogin);*/
+		//Users realUser = dataService.getUserByLogin(inputedLogin);
+		
+		/*if(realUser.getPwd() == inputedPassword) {
+			
+		}*/
 		
 		
 		return "redirect:/userTasks";

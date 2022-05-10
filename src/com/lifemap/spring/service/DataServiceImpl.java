@@ -78,4 +78,11 @@ public class DataServiceImpl implements DataService {
 		return dataDAO.getBranch(theId);
 	}
 
+	@Override
+	@Transactional
+	public Users getUserByLogin(String inputedLogin) {
+		// TODO Auto-generated method stub
+		return dataDAO.getUserByLogin(inputedLogin);
+	}
+
 }

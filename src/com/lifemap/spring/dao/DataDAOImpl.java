@@ -174,4 +174,18 @@ public class DataDAOImpl implements DataDAO {
 		return theBranch;
 	}
 
+	@Override
+	public Users getUserByLogin(String inputedLogin) {
+		// TODO Auto-generated method stub
+		
+		Session currentSession = sessionFactory.getCurrentSession();
+
+		Query<Users> theQuery = currentSession
+				.createQuery("from Users U where U.login=" + inputedLogin, Users.class);
+		
+		Users theUser = theQuery.getResultList().get(0);
+		return theUser;
+		
+	}
+
 }
