@@ -30,4 +30,8 @@ public interface DataDAO {
 
 	public Users getUser(int currentUserId);
 
+	public void saveUser(Users user);
+
+	public void deleteUser(int theId);
+
 }

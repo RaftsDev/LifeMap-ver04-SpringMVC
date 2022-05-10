@@ -46,7 +46,7 @@ tr:nth-child(even) {
 				src="${pageContext.request.contextPath}/resources/img/Logo-cut-version-70.png"></a>
 		</div>
 		<ul class="navbar-nav">
-			<li class="nav-item"><a class="nav-link" href="userTasks">Main</a>
+			<li class="nav-item"><a class="nav-link" href="adminPage">Main</a>
 			</li>
 			<li class="nav-item"><a class="nav-link" href="loginPage">Logout</a>
 

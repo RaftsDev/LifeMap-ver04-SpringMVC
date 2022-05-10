@@ -29,4 +29,8 @@ public interface DataService {
 	public Users getUserByLogin(String inputedLogin);
 
 	public Users getUser(int currentUserId);
+
+	public void saveUser(Users theUser);
+
+	public void deleteUser(int theId);
 }

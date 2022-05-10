@@ -92,4 +92,18 @@ public class DataServiceImpl implements DataService {
 		return dataDAO.getUser(currentUserId);
 	}
 
+	@Override
+	@Transactional
+	public void saveUser(Users theUser) {
+		// TODO Auto-generated method stub
+		dataDAO.saveUser(theUser); 
+	}
+
+	@Override
+	@Transactional
+	public void deleteUser(int theId) {
+		// TODO Auto-generated method stub
+		dataDAO.deleteUser(theId);
+	}
+
 }

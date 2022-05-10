@@ -247,6 +247,31 @@ public class BaseController {
 		return "update-user-page";
 	}
 	
+	
+	
+	@PostMapping("/saveUser")
+	public String saveUser(@ModelAttribute("user") Users theUser) {
+		
+		//Branches theBranch = dataService.getBranch(101);
+		
+		//theTask.setBranch(theBranch);
+				
+		dataService.saveUser(theUser);
+		
+		return "redirect:/adminPage";
+	}
+	
+	@GetMapping("/deleteUser")
+	public String deleteUser(@RequestParam("userId") int theId, Model theModel) {
+		
+		
+		//delete User
+		dataService.deleteUser(theId);
+		
+		
+		return "redirect:/adminPage";
+	}
+	
 }
 
 

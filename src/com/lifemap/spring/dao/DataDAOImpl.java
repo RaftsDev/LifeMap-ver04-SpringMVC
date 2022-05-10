@@ -201,4 +201,25 @@ public class DataDAOImpl implements DataDAO {
 		return theUser;
 	}
 
+	@Override
+	public void saveUser(Users user) {
+		// TODO Auto-generated method stub
+		Session currentSession = sessionFactory.getCurrentSession();
+
+		currentSession.saveOrUpdate(user);
+	}
+
+	@Override
+	public void deleteUser(int theId) {
+		// TODO Auto-generated method stub
+		Session currentSession = sessionFactory.getCurrentSession();
+
+		Query theQuery = currentSession.createQuery("delete from Users where id=:userId");
+		theQuery.setParameter("userId", theId);
+
+		theQuery.executeUpdate();
+	}
+
+	
+
 }
