@@ -50,7 +50,7 @@
 	<main>
 
 		<div id="header">
-			<h2>Welcome to LifeMap!!!</h2>
+			<h2 style="margin: 3% 0;">Welcome to LifeMap!!!</h2>
 		</div>
 		<div id="board-box">
 			<!-- <form action="checkLogin" method="post">

@@ -25,7 +25,7 @@
 			</li>
 		</ul>
 </nav-->
-<nav
+	 <nav
 		class="navbar navbar-expand-sm bg-secondary navbar-light justify-content-end">
 		
 		 <div class="navbar-header">
@@ -34,7 +34,7 @@
 		<ul class="navbar-nav">
 			<li class="nav-item"><a class="nav-link" href="userTasks">Main</a>
 			</li>
-			<li class="nav-item"><a class="nav-link" href="#">Login</a>
+			<li class="nav-item"><a class="nav-link" href="loginPage">Logout</a>
 			
 			</li>
 			<li class="nav-item"><a class="nav-link" href="contactPage">Contacts</a>

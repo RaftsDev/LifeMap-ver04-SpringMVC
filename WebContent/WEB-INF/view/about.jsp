@@ -35,7 +35,7 @@
 		<ul class="navbar-nav">
 			<li class="nav-item"><a class="nav-link" href="userTasks">Main</a>
 			</li>
-			<li class="nav-item"><a class="nav-link" href="#">Login</a>
+			<li class="nav-item"><a class="nav-link" href="loginPage">Logout</a>
 			
 			</li>
 			<li class="nav-item"><a class="nav-link" href="contactPage">Contacts</a>
