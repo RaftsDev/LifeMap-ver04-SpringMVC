@@ -13,12 +13,12 @@
 
 <link type="text/css" rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/style.css">
-	
+
 <title>Welcome to LifeMap!!!</title>
 </head>
 <body>
 
-<nav
+	<nav
 		class="navbar navbar-expand-sm bg-secondary navbar-light justify-content-end">
 		<ul class="navbar-nav">
 			<li class="nav-item"><a class="nav-link" href="#">Main</a></li>
@@ -29,11 +29,11 @@
 		</ul>
 	</nav>
 	<main>
-		
-<div id="header">
-				<h2>Welcome to LifeMap!!!</h2>
-			</div>
-			<div id="board-box">
+
+		<div id="header">
+			<h2>Welcome to LifeMap!!!</h2>
+		</div>
+		<div id="board-box">
 			<!-- <form action="checkLogin" method="post">
   <label for="username">Username:</label><br>
   <input type="text" id="username" name="username"><br>
@@ -43,26 +43,40 @@
   <input type="submit" value="Submit">
 </form> -->
 
-<form:form action="checkLogin" modelAttribute="user" method="POST">
-			
-			
-		
-				<label for="username">Username:</label>
-					<form:input path="login" /><br>
-						
-			    <label for="pwd">Password:</label>
-					<form:input type="password" path="pwd" /><br>
-						
-						<div></div>
-				<label></label>
-					<input type="submit" value="Submit"  />
-						
-				
-		</form:form>
-			
-			</div>
+			<form:form action="checkLogin" modelAttribute="user" method="POST">
+
+				<div style="text-align: center;">
+					<div class="input-string-box">
+						<div style="display: inline-block; margin: 1% 1%; width: 15%">
+							<label for="username">Username:</label>
+						</div>
+						<div style="display: inline-block; margin: 1% 1%;">
+							<form:input path="login" />
+							<br>
+						</div>
+					</div>
+
+					<div class="input-string-box">
+						<div style="display: inline-block; margin: 1% 1%; width: 15%">
+							<label for="pwd">Password: </label>
+						</div>
+						<div style="display: inline-block; margin: 1% 1%;">
+							<form:input type="password" path="pwd" />
+							<br>
+						</div>
+					</div>
+					<div class="input-string-box">
+						<div style="display: inline-block; margin: 1% 1%;">
+							<label></label> <input type="submit" value="Submit" />
+						</div>
+					</div>
+				</div>
+
+			</form:form>
+
+		</div>
 	</main>
-<footer>&copy raftsdev 2022</footer>
+	<footer>&copy raftsdev 2022</footer>
 
 </body>
 </html>
