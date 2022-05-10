@@ -39,6 +39,37 @@ public class BaseController {
 		return "list-customers";
 	}*/
 	
+	@GetMapping("/loginPage")
+	public String loginPage(Model theModel) {
+		
+		Users theUser = new Users();
+		
+		theModel.addAttribute("user", theUser);
+		
+		return "login-page";
+	}
+	
+	@PostMapping("/checkLogin")
+	public String checkLogin(@ModelAttribute("user") Users user) {
+		
+		//int currentUserId = 100;
+		
+		//get HashMap from DAO
+		//Map<Branches, Collection> theUserBranchesTasks = dataService.getUserTasks(currentUserId);
+		
+		//transfer tasks and branches to view file
+		//theModel.addAttribute("userTasks", theUserTasks.get("userTasks"));
+		//theModel.addAttribute("userBranchesTasks",theUserBranchesTasks);
+		
+		/*String inputedLogin = user.getLogin();
+		String inputedPassword = user.getPwd();
+		
+		Users realUser = dataService.getUserByLogin(inputedLogin);*/
+		
+		
+		return "redirect:/userTasks";
+	}
+	
 	@GetMapping("/userTasks")
 	public String listTasks(Model theModel) {
 		
@@ -53,6 +84,7 @@ public class BaseController {
 		
 		
 		return "user-tasks";
+		
 	}
 	
 	@GetMapping("/allTasks")

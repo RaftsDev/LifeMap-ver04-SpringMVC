@@ -25,17 +25,17 @@
 				<tr>
 					<td><label>Description:</label></td>
 					<td><form:input path="shortDesc" />
-						</form></td>
+						</td>
 				</tr>
 				<tr>
 					<td><label>Urgency level:</label></td>
 					<td><form:input path="urgencyLevel" />
-						</form></td>
+						</td>
 				</tr>
 				<tr>
 					<td><label></label></td>
 					<td><input type="submit" value="Save"  />
-						</form></td>
+						</td>
 				</tr>
 			</table>
 		</form:form>

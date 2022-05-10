@@ -1,2 +1,2 @@
 <!--% response.sendRedirect("customer/tasks"); %--> 
-<% response.sendRedirect("userTasks"); %>
+<% response.sendRedirect("loginPage"); %>

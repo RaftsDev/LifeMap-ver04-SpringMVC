@@ -25,4 +25,6 @@ public interface DataService {
 	public void saveTask(Tasks theTask);
 
 	public Branches getBranch(int theId);
+
+	public Users getUserByLogin(String inputedLogin);
 }

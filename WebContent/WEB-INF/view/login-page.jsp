@@ -1,46 +1,67 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<link type="text/css" rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/style.css">
+	
+<title>Welcome to LifeMap!!!</title>
 </head>
 <body>
 
-<div class="container">
-  <h2>Horizontal form</h2>
-  <form class="form-horizontal" action="/action_page.php">
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="email">Email:</label>
-      <div class="col-sm-10">
-        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="pwd">Password:</label>
-      <div class="col-sm-10">          
-        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
-      </div>
-    </div>
-    <div class="form-group">        
-      <div class="col-sm-offset-2 col-sm-10">
-        <div class="checkbox">
-          <label><input type="checkbox" name="remember"> Remember me</label>
-        </div>
-      </div>
-    </div>
-    <div class="form-group">        
-      <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-default">Submit</button>
-      </div>
-    </div>
-  </form>
-</div>
+<nav
+		class="navbar navbar-expand-sm bg-secondary navbar-light justify-content-end">
+		<ul class="navbar-nav">
+			<li class="nav-item"><a class="nav-link" href="#">Main</a></li>
+			<li class="nav-item"><a class="nav-link" href="login.jsp">Login</a>
+			</li>
+			<li class="nav-item"><a class="nav-link" href="about.jsp">About</a>
+			</li>
+		</ul>
+	</nav>
+	<main>
+		
+<div id="header">
+				<h2>Welcome to LifeMap!!!</h2>
+			</div>
+			<div id="board-box">
+			<!-- <form action="checkLogin" method="post">
+  <label for="username">Username:</label><br>
+  <input type="text" id="username" name="username"><br>
+  <label for="pwd">Password:</label><br>
+  <input type="password" id="pwd" name="pwd"><br>
+  
+  <input type="submit" value="Submit">
+</form> -->
+
+<form:form action="checkLogin" modelAttribute="user" method="POST">
+			
+			
+		
+				<label for="username">Username:</label>
+					<form:input path="login" />
+						
+			    <label for="pwd">Password:</label>
+					<form:input type="password" path="pwd" />
+						
+				<label></label>
+					<input type="submit" value="Save"  />
+						
+				
+		</form:form>
+			
+			</div>
+	</main>
+<footer>&copy raftsdev 2022</footer>
 
 </body>
 </html>
