@@ -39,8 +39,9 @@
 	</nav>
 
 	<main>
-
+<div><u><h3 style="margin:1% 10%;">Hello <c:out value = "${user.login}"/>!</h3></u></div>
 		<div id="board-box">
+		
 			<div id="header">
 				<h2>To Do list of user's tasks</h2>
 			</div>

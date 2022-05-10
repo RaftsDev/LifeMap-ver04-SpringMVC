@@ -28,4 +28,6 @@ public interface DataDAO {
 
 	public Users getUserByLogin(String inputedLogin);
 
+	public Users getUser(int currentUserId);
+
 }

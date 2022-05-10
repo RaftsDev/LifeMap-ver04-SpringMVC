@@ -80,7 +80,9 @@ public class BaseController {
 		int currentUserId = 100;
 		
 		//get user
-		//Users theUser = dataService.getUser(currentUserId);
+		Users theUser = dataService.getUser(currentUserId);
+		
+		theModel.addAttribute("user",theUser);
 		//get HashMap from DAO
 		Map<Branches, Collection> theUserBranchesTasks = dataService.getUserTasks(currentUserId);
 		

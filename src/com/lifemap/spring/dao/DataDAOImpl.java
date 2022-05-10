@@ -188,4 +188,14 @@ public class DataDAOImpl implements DataDAO {
 		
 	}
 
+	@Override
+	public Users getUser(int currentUserId) {
+		// TODO Auto-generated method stub
+		
+		Session currentSession = sessionFactory.getCurrentSession();
+
+		Users theUser = currentSession.get(Users.class, currentUserId);
+		return theUser;
+	}
+
 }

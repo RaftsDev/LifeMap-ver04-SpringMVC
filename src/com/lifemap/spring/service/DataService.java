@@ -28,5 +28,5 @@ public interface DataService {
 
 	public Users getUserByLogin(String inputedLogin);
 
-	//public Users getUser(int currentUserId);
+	public Users getUser(int currentUserId);
 }

@@ -85,4 +85,11 @@ public class DataServiceImpl implements DataService {
 		return dataDAO.getUserByLogin(inputedLogin);
 	}
 
+	@Override
+	@Transactional
+	public Users getUser(int currentUserId) {
+		// TODO Auto-generated method stub
+		return dataDAO.getUser(currentUserId);
+	}
+
 }
