@@ -79,6 +79,8 @@ public class BaseController {
 		
 		int currentUserId = 100;
 		
+		//get user
+		//Users theUser = dataService.getUser(currentUserId);
 		//get HashMap from DAO
 		Map<Branches, Collection> theUserBranchesTasks = dataService.getUserTasks(currentUserId);
 		
@@ -186,6 +188,20 @@ public class BaseController {
 		dataService.saveTask(theTask);
 		
 		return "redirect:/userTasks";
+	}
+	
+	@GetMapping("/aboutPage")
+	public String aboutPage(Model theModel) {
+	
+		
+		return "about";
+	}
+	
+	@GetMapping("/contactPage")
+	public String contactPage(Model theModel) {
+	
+		
+		return "contacts-page";
 	}
 	
 	/*

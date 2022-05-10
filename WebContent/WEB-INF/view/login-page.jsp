@@ -24,7 +24,7 @@
 			<li class="nav-item"><a class="nav-link" href="#">Main</a></li>
 			<li class="nav-item"><a class="nav-link" href="login.jsp">Login</a>
 			</li>
-			<li class="nav-item"><a class="nav-link" href="about.jsp">About</a>
+			<li class="nav-item"><a class="nav-link" href="aboutPage">About</a>
 			</li>
 		</ul>
 	</nav>
@@ -48,13 +48,14 @@
 			
 		
 				<label for="username">Username:</label>
-					<form:input path="login" />
+					<form:input path="login" /><br>
 						
 			    <label for="pwd">Password:</label>
-					<form:input type="password" path="pwd" />
+					<form:input type="password" path="pwd" /><br>
 						
+						<div></div>
 				<label></label>
-					<input type="submit" value="Save"  />
+					<input type="submit" value="Submit"  />
 						
 				
 		</form:form>

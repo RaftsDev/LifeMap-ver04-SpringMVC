@@ -27,4 +27,6 @@ public interface DataService {
 	public Branches getBranch(int theId);
 
 	public Users getUserByLogin(String inputedLogin);
+
+	//public Users getUser(int currentUserId);
 }

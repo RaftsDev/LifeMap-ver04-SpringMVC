@@ -9,7 +9,7 @@ background-position: center;
 
 
 main{
-  height: 85vh;
+  height: 75vh;
   /*text-align: center;*/
   /*background-color: #bfbfbf;*/
 }
@@ -19,6 +19,11 @@ main{
 
 footer{
   text-align: right;
+}
+
+.footer-box{
+	color:#555;
+	height:5vh;
 }
 
 

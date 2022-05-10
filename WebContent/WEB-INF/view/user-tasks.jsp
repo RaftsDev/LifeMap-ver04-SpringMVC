@@ -22,11 +22,18 @@
 <body>
 	<nav
 		class="navbar navbar-expand-sm bg-secondary navbar-light justify-content-end">
+		
+		 <div class="navbar-header">
+      <a  href="#"><img alt="location on the map" src="${pageContext.request.contextPath}/resources/img/Logo-cut-version-70.png"></a>
+    </div>
 		<ul class="navbar-nav">
-			<li class="nav-item"><a class="nav-link" href="#">Main</a></li>
-			<li class="nav-item"><a class="nav-link" href="login.jsp">Login</a>
+			<li class="nav-item"><a class="nav-link" href="userTasks">Main</a>
 			</li>
-			<li class="nav-item"><a class="nav-link" href="about.jsp">About</a>
+			<li class="nav-item"><a class="nav-link" href="#">Login</a>
+			
+			</li>
+			<li class="nav-item"><a class="nav-link" href="contactPage">Contacts</a>
+			<li class="nav-item"><a class="nav-link" href="aboutPage">About</a>
 			</li>
 		</ul>
 	</nav>
@@ -112,7 +119,8 @@
 
 	</main>
 
-	<footer>&copy raftsdev 2022</footer>
+<div class="footer-box"><footer>&copy raftsdev 2022</footer></div>
+	
 
 </body>
 
