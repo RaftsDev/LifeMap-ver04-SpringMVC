@@ -38,24 +38,10 @@ public class DataDAOImpl implements DataDAO {
 	}
 
 	@Override
-	public Map<Branches, Collection> getUserTasks(int userId) {
+	public Map<Branches, Map> getUserTasks(int userId) {
 		// TODO Auto-generated method stub
 
 		Session currentSession = sessionFactory.getCurrentSession();
-
-		// get the current user
-		// Users currentUser = currentSession.get(Users.class, userId);
-
-		/*
-		 * Tasks logTask = currentSession.get(Tasks.class, 1002);
-		 * 
-		 * List<Tasks> currentUserTasks = null; currentUserTasks.add(logTask);
-		 */
-
-		// get all branches of current user
-
-		// Query<Branches> theQuery = currentSession.createQuery("from Branches B where
-		// B.user.id="+userId, Branches.class);
 
 		// get all branches in ordered way
 		Query<Branches> theQuery = currentSession
@@ -71,43 +57,42 @@ public class DataDAOImpl implements DataDAO {
 			// Only parent branches
 			if (branch.getParentId() == 0) {
 				parentList.add(branch);
+
 			}
 
 		}
 
 		// HashMap for parent Branches
-		Map<Branches, Collection> parentBranches = new HashMap();
+		Map<Branches, Map> parentBranches = new HashMap();
+		
+		//Put parent branches to HashMap and filling with empty collections
+		for (Branches parentBranch : parentList) {
+			
+			Map<Branches,Collection> tmpBranchesTasks = new HashMap();
+			
+			//put to HashMap
+			parentBranches.put(parentBranch,tmpBranchesTasks);
+		}
 
+		//filling collections with child branches and tasks
 		for (Branches parentBranch : parentList) {
 
 			// loop over whole collection of all branches
 			for (Branches branch : branches) {
-				//if branch is a child of current parent branch
-				if(parentBranch.getId()==branch.getParentId()) {
-					
-					
-					
-					//put to hashmap current child branch as a Key and it's List of tasks as Value
-					tmpBranchesTasks.put(branch, branch.getTasks());
-					
-					//put to Higher HashMap parent branches and child branch  
-					parentBranches.put(parentBranch, tmpBranchesTasks);
+				// if branch is a child of current parent branch
+				if (parentBranch.getId() == branch.getParentId()) {
+
+					// get from Higher HashMap - the children HashMap and put branch and it's tasks
+					parentBranches.get(parentBranch).put(branch, branch.getTasks());
 				}
-				
-			}
-			
-		}
 
-		// HashMap for transfer data to Controller
-		Map<Branches, Collection> userTasksBranches = new HashMap();
-
-		for (Branches branch : branches) {
-			// Except parent branches
-			if (branch.getParentId() != 0) {
-				userTasksBranches.put(branch, branch.getTasks());
 			}
 
 		}
+		
+		
+
+		
 
 		// LinkedHashSet for unique value of branches
 		/*
@@ -115,7 +100,7 @@ public class DataDAOImpl implements DataDAO {
 		 * tempTask : userTasks) { userBranches.add(tempTask.getBranch()); }
 		 */
 
-		return userTasksBranches;
+		return parentBranches;
 	}
 
 	@Override
