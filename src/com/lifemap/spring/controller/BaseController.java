@@ -24,20 +24,10 @@ import com.lifemap.spring.service.DataService;
 public class BaseController {
 
 	
-	/*@Autowired
-	private CustomerService customerService;*/
 	@Autowired
 	private DataService dataService;
 	
-	/*@GetMapping("/list")
-	public String listCustomers(Model theModel) {
-		
-		List<Customer> theCustomers = customerService.getCustomers();
-		
-		theModel.addAttribute("customers", theCustomers);
-		
-		return "list-customers";
-	}*/
+	
 	
 	@GetMapping("/loginPage")
 	public String loginPage(Model theModel) {
