@@ -39,22 +39,32 @@
 	</nav>
 
 	<main>
-<div><u><h3 style="margin:1% 10%;">Hello <c:out value = "${user.login}"/>!</h3></u></div>
+<div><u><h3 style="margin:1% 10%;">Hello <c:out value = "${user.fname}"/><c:out value = "${user.lname}"/>!</h3></u></div>
 		<div id="board-box">
 		
 			<div id="header">
 				<h2>To Do list of user's tasks</h2>
 			</div>
 
+<!--                      Collapsable  -->
 
+<c:forEach var="tempUserBranchTasks" items="${userBranchesTasks}">
 
-			<div id="accordion-outer-box">
+ <div class="panel-group">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" href="#collapse${tempUserBranchTasks.getKey().id}">Collapsible panel</a>   <a>${tempUserBranchTasks.getKey().shortDesc}</a>
+        </h4>
+      </div>
+      <div id="collapse${tempUserBranchTasks.getKey().id}" class="panel-collapse collapse">
+        <div class="panel-body">Panel Body <div id="accordion-outer-box">
 
 				<div class="accordion" id="accordionExample"></div>
 
 
 				<!--  External loop -->
-				<c:forEach var="tempUserBranch" items="${userBranchesTasks}">
+				<c:forEach var="${userBranchesTasks}" items="${userBranchesTasks}">
 
 					<!-- create url for getting branch id -->
 					<c:url var="addTaskLink" value="/addTask">
@@ -110,8 +120,13 @@
 
 
 
-			</div>
-
+			</div></div>
+        <div class="panel-footer">Panel Footer</div>
+      </div>
+    </div>
+  </div>
+			
+</c:forEach>
 
 		</div>
 
