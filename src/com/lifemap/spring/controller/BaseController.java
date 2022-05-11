@@ -75,7 +75,7 @@ public class BaseController {
 		return page;
 	}
 	
-	@GetMapping("/userTasks")
+	/*@GetMapping("/userTasks")
 	public String listTasks(Model theModel) {
 		
 		int currentUserId = 100;
@@ -93,6 +93,27 @@ public class BaseController {
 		
 		
 		return "user-tasks";
+		
+	}*/
+	
+	@GetMapping("/userBranchesTasks")
+	public String userBranchesTasks(Model theModel) {
+		
+		int currentUserId = 100;
+		
+		//get user
+		Users theUser = dataService.getUser(currentUserId);
+		
+		theModel.addAttribute("user",theUser);
+		//get HashMap from DAO
+		Map<Branches, List> theUserBranchesTasks = dataService.getUserTasks(currentUserId);
+		
+		//transfer tasks and branches to view file
+		//theModel.addAttribute("userTasks", theUserTasks.get("userTasks"));
+		theModel.addAttribute("userBranchesTasks",theUserBranchesTasks);
+		
+		
+		return "user-branches-tasks";
 		
 	}
 	

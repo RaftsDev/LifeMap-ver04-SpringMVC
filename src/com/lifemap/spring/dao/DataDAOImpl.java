@@ -38,7 +38,7 @@ public class DataDAOImpl implements DataDAO {
 	}
 
 	@Override
-	public Map<Branches, Map> getUserTasks(int userId) {
+	public Map<Branches, List> getUserTasks(int userId) {
 		// TODO Auto-generated method stub
 
 		Session currentSession = sessionFactory.getCurrentSession();
@@ -63,27 +63,22 @@ public class DataDAOImpl implements DataDAO {
 		}
 
 		// HashMap for parent Branches
-		Map<Branches, Map> parentBranches = new HashMap();
-		
-		//Put parent branches to HashMap and filling with empty collections
-		for (Branches parentBranch : parentList) {
-			
-			Map<Branches,Collection> tmpBranchesTasks = new HashMap();
-			
-			//put to HashMap
-			parentBranches.put(parentBranch,tmpBranchesTasks);
-		}
+		Map<Branches, List> parentMap = new HashMap();
 
 		//filling collections with child branches and tasks
 		for (Branches parentBranch : parentList) {
 
-			// loop over whole collection of all branches
+			//put to HashMap empty List
+			parentMap.put(parentBranch,new ArrayList());
+			
+			// internal loop over whole collection of all branches
 			for (Branches branch : branches) {
+				
 				// if branch is a child of current parent branch
 				if (parentBranch.getId() == branch.getParentId()) {
 
-					// get from Higher HashMap - the children HashMap and put branch and it's tasks
-					parentBranches.get(parentBranch).put(branch, branch.getTasks());
+					// get from HashMap - the List and put branch
+					parentMap.get(parentBranch).add(branch);
 				}
 
 			}
@@ -100,7 +95,7 @@ public class DataDAOImpl implements DataDAO {
 		 * tempTask : userTasks) { userBranches.add(tempTask.getBranch()); }
 		 */
 
-		return parentBranches;
+		return parentMap;
 	}
 
 	@Override
