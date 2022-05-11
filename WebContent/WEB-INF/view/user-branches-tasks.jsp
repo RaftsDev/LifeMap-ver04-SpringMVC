@@ -39,7 +39,7 @@
 	</nav>
 
 	<main>
-<div><u><h3 style="margin:1% 10%;">Hello <c:out value = "${user.fname}"/><c:out value = "${user.lname}"/>!</h3></u></div>
+<div><u><h3 style="margin:1% 10%;">Hello <c:out value = "${user.fname}"/><c:out value = " ${user.lname}"/>!</h3></u></div>
 		<div id="board-box">
 		
 			<div id="header">
@@ -48,31 +48,37 @@
 
 <!--                      Collapsable  -->
 
-<c:forEach var="tempUserBranchTasks" items="${userBranchesTasks}">
+<c:forEach var="tempUserParentBranch" items="${userBranchesTasks}">
 
- <div class="panel-group">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" href="#collapse${tempUserBranchTasks.getKey().id}">Collapsible panel</a>   <a>${tempUserBranchTasks.getKey().shortDesc}</a>
-        </h4>
-      </div>
-      <div id="collapse${tempUserBranchTasks.getKey().id}" class="panel-collapse collapse">
-        <div class="panel-body">Panel Body <div id="accordion-outer-box">
+<div class="container mt-3">
+  <!-- >h2>Simple Collapsible</h2>
+  <p>Click on the button to toggle between showing and hiding content.</p -->
+  <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#demo${tempUserParentBranch.getKey().id}">${tempUserParentBranch.getKey().shortDesc}</button>
+  <div id="demo${tempUserParentBranch.getKey().id}" class="collapse">
+  
+<!--     Collapsable    -->
+
+
+
+
+        
+        <!--          Accordion            -->
+        <div id="accordion-outer-box">
 
 				<div class="accordion" id="accordionExample"></div>
 
 
 				<!--  External loop -->
-				<c:forEach var="${userBranchesTasks}" items="${userBranchesTasks}">
+				<!--  get element as a varibale from List-->
+				<c:forEach var="tmpChildBranches" items="${tempUserParentBranch.getValue()}">
 
 					<!-- create url for getting branch id -->
 					<c:url var="addTaskLink" value="/addTask">
-						<c:param name="branchId" value="${tempUserBranch.getKey().id}" />
+						<c:param name="branchId" value="${tmpChildBranches.id}" />
 					</c:url>
 					<div class="accordion-item">
 						<h2 class="accordion-header"
-							id="heading${tempUserBranch.getKey().id}">
+							id="heading${tmpChildBranches.id}">
 							<div class="branch-action-outter">
 								<div class="branch-left-fill-box"> </div>
 								<div class="branch-action-box">
@@ -83,20 +89,20 @@
 
 							<button class="accordion-button" type="button"
 								data-bs-toggle="collapse"
-								data-bs-target="#collapse${tempUserBranch.getKey().id}"
+								data-bs-target="#collapse${tmpChildBranches.id}"
 								aria-expanded="true"
-								aria-controls="collapse${tempUserBranch.getKey().id}">
-								${tempUserBranch.getKey().shortDesc}</button>
+								aria-controls="collapse${tmpChildBranches.id}">
+								${tmpChildBranches.shortDesc}</button>
 
 						</h2>
 
-						<ul id="collapse${tempUserBranch.getKey().id}"
+						<ul id="collapse${tmpChildBranches.id}"
 							class="accordion-collapse collapse show"
-							aria-labelledby="heading${tempUserBranch.getKey().id}"
+							aria-labelledby="heading${tmpChildBranches.id}"
 							data-bs-parent="#accordionExample" style="list-style-type: none;">
 							<!--  Internal loop -->
 							<c:forEach var="tempUserTask"
-								items="${tempUserBranch.getValue()}">
+								items="${tmpChildBranches.getTasks()}">
 								<c:url var="updateLink" value="/updateTask">
 									<c:param name="taskId" value="${tempUserTask.id}" />
 								</c:url>
@@ -120,11 +126,19 @@
 
 
 
-			</div></div>
-        <div class="panel-footer">Panel Footer</div>
-      </div>
-    </div>
+			</div>
+			
+			<!--       Accordion end -->
+
+
+
+    
   </div>
+</div>
+
+			
+			<!--     Collapsable  end   -->
+			
 			
 </c:forEach>
 
