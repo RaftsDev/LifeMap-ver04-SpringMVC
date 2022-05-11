@@ -93,9 +93,13 @@ public class DataDAOImpl implements DataDAO {
 		// Iterate through List of branches and put tasks into HashMap
 		for (Branches branch : branches) {
 
-			if (!branch.getTasks().isEmpty()) {
+			/*if (!branch.getTasks().isEmpty()) {
 				userTasksBranches.put(branch, branch.getTasks());
-			}
+			}*/
+				if(branch.getParentId()!=0) {
+					userTasksBranches.put(branch, branch.getTasks());
+				}
+				
 
 		}
 
