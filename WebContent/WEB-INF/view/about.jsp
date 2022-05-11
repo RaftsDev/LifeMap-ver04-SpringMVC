@@ -33,7 +33,7 @@
       <a  href="#"><img style="position: relative; right:1430%;" alt="location on the map" src="${pageContext.request.contextPath}/resources/img/Logo-cut-version-70.png"></a>
     </div>
 		<ul class="navbar-nav">
-			<li class="nav-item"><a class="nav-link" href="userTasks">Main</a>
+			<li class="nav-item"><a class="nav-link" href="userBranchesTasks">Main</a>
 			</li>
 			<li class="nav-item"><a class="nav-link" href="loginPage">Logout</a>
 			
