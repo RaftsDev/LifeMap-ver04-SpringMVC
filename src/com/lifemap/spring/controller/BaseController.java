@@ -57,7 +57,7 @@ public class BaseController {
 		String page = "login-page";
 		
 		if(inputedLogin.equals("John")) {
-			page = "redirect:/userTasks";
+			page = "redirect:/userBranchesTasks";
 		}
 		
 		if(inputedLogin.equals("Admin")) {
