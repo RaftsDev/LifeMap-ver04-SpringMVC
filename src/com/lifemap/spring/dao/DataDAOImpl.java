@@ -1,5 +1,6 @@
 package com.lifemap.spring.dao;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
@@ -16,7 +17,6 @@ import org.springframework.stereotype.Repository;
 import com.lifemap.spring.entity.Branches;
 import com.lifemap.spring.entity.Tasks;
 import com.lifemap.spring.entity.Users;
-
 
 @Repository
 public class DataDAOImpl implements DataDAO {
@@ -64,42 +64,48 @@ public class DataDAOImpl implements DataDAO {
 		// Branches.class);
 		List<Branches> branches = theQuery.getResultList();
 
-		// Branches branch = currentSession.get(Branches.class, 101);
+		// get list of parent branches
+		List<Branches> parentList = new ArrayList();
+		for (Branches branch : branches) {
 
-		// get tasks from current user's branches
+			// Only parent branches
+			if (branch.getParentId() == 0) {
+				parentList.add(branch);
+			}
 
-		// Get all tasks from all users
-		// List<Tasks> currentUserTasks = branches.get(1).getTasks();
-		// Query<Tasks> theQueryUsers = currentSession.createQuery("from Tasks",
-		// Tasks.class);
-		// List<Tasks> allTasks = theQueryUsers.getResultList();
+		}
 
-		// if(!branches.isEmpty()) {
+		// HashMap for parent Branches
+		Map<Branches, Collection> parentBranches = new HashMap();
+
+		for (Branches parentBranch : parentList) {
+
+			// loop over whole collection of all branches
+			for (Branches branch : branches) {
+				//if branch is a child of current parent branch
+				if(parentBranch.getId()==branch.getParentId()) {
+					
+					
+					
+					//put to hashmap current child branch as a Key and it's List of tasks as Value
+					tmpBranchesTasks.put(branch, branch.getTasks());
+					
+					//put to Higher HashMap parent branches and child branch  
+					parentBranches.put(parentBranch, tmpBranchesTasks);
+				}
+				
+			}
+			
+		}
 
 		// HashMap for transfer data to Controller
 		Map<Branches, Collection> userTasksBranches = new HashMap();
 
-		/*
-		 * List<Tasks> userTasks = branches.get(0).getTasks();
-		 * 
-		 * for (int i = 1; i < branches.size(); i++) {
-		 * 
-		 * // get element tasks from array List<Tasks> tempTask =
-		 * branches.get(i).getTasks(); userTasks.addAll(tempTask);
-		 * 
-		 * }
-		 */
-
-		// Iterate through List of branches and put tasks into HashMap
 		for (Branches branch : branches) {
-
-			/*if (!branch.getTasks().isEmpty()) {
+			// Except parent branches
+			if (branch.getParentId() != 0) {
 				userTasksBranches.put(branch, branch.getTasks());
-			}*/
-				if(branch.getParentId()!=0) {
-					userTasksBranches.put(branch, branch.getTasks());
-				}
-				
+			}
 
 		}
 
@@ -166,7 +172,7 @@ public class DataDAOImpl implements DataDAO {
 		Session currentSession = sessionFactory.getCurrentSession();
 
 		currentSession.saveOrUpdate(theTask);
-		
+
 	}
 
 	@Override
@@ -181,24 +187,23 @@ public class DataDAOImpl implements DataDAO {
 	@Override
 	public Users getUserByLogin(String inputedLogin) {
 		// TODO Auto-generated method stub
-		
+
 		Session currentSession = sessionFactory.getCurrentSession();
 
-		Query<Users> theQuery = currentSession
-				.createQuery("from Users U where U.login=" + inputedLogin, Users.class);
-		
-		//createQuery("from Users ")
-		
+		Query<Users> theQuery = currentSession.createQuery("from Users U where U.login=" + inputedLogin, Users.class);
+
+		// createQuery("from Users ")
+
 		Users theUser = theQuery.getResultList().get(0);
-				
+
 		return theUser;
-		
+
 	}
 
 	@Override
 	public Users getUser(int currentUserId) {
 		// TODO Auto-generated method stub
-		
+
 		Session currentSession = sessionFactory.getCurrentSession();
 
 		Users theUser = currentSession.get(Users.class, currentUserId);
@@ -223,7 +228,5 @@ public class DataDAOImpl implements DataDAO {
 
 		theQuery.executeUpdate();
 	}
-
-	
 
 }
