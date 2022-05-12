@@ -155,7 +155,7 @@ public class BaseController {
 		
 		dataService.deleteTask(theId);
 		
-		return "redirect:/userTasks";
+		return "redirect:/userBranchesTasks";
 	}
 	
 	
@@ -211,7 +211,7 @@ public class BaseController {
 				
 		dataService.saveTask(theTask);
 		
-		return "redirect:/userTasks";
+		return "redirect:/userBranchesTasks";
 	}
 	
 	@GetMapping("/aboutPage")
