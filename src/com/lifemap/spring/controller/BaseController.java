@@ -175,7 +175,7 @@ public class BaseController {
 		
 		dataService.saveTask(theTask);
 		
-		return "redirect:/userTasks";
+		return "redirect:/userBranchesTasks";
 	}
 	
 	@GetMapping("/addTask")
