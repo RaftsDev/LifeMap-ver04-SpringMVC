@@ -43,7 +43,7 @@
 		<div id="board-box">
 		
 			<div id="header">
-				<h2>To Do list of user's tasks</h2>
+				<h2>Task list</h2>
 			</div>
 
 <!--                      Collapsable  -->
@@ -53,7 +53,7 @@
 <div class="container mt-3">
   <!-- >h2>Simple Collapsible</h2>
   <p>Click on the button to toggle between showing and hiding content.</p -->
-  <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#demo${tempUserParentBranch.getKey().id}">${tempUserParentBranch.getKey().shortDesc}</button>
+  <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#demo${tempUserParentBranch.getKey().id}" style="width:100%;">${tempUserParentBranch.getKey().shortDesc}</button>
   <div id="demo${tempUserParentBranch.getKey().id}" class="collapse">
   
 <!--     Collapsable    -->
