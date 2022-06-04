@@ -55,9 +55,7 @@ The main purpose of this project is a task list app where tasks are represented 
 
 In the first approach of creating an app the hierarchy was simplified and restricted at two levels. Further this restriction will be readjusted. 
 
-Example below shows case when IT tech department faced intensive workflow with relocation of local office to 
-other area. In such of example certain tech team  despite regular daily routine tasks got additional work.
-All tasks in a picture arranged by appropriate groups and subgroups.
+The example below shows a real-life case where the IT department faced an intensive workflow with a local office relocating to another area. In this example, a certain technical team, despite the usual daily routine tasks, received an additional workload. All tasks in the picture are divided into relevant groups and subgroups.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
