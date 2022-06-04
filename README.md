@@ -153,6 +153,16 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 <img src="WebContent\resources\meta-files\DB-schema.png" alt="Schema of database" width="570" height="370">
 
+####Screenshot of data in Branch table
+
+<img src="WebContent\resources\meta-files\adjacency-list.png" alt="adjacency list visual representation" width="570" height="370">
+
+###Code
+
+Diagram of hierarchical structure of collections transfers to jsp file through model
+
+<img src="WebContent\resources\meta-files\\HashMap.png" alt="hierarchical structure of collections" width="570" height="370">
+
 
 
 
