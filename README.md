@@ -39,6 +39,7 @@
       </ul>
     </li>
     <li><a href="#roadmap">Roadmap</a></li>
+     <li><a href="#Implementation">Implementation</a></li>
   </ol>
 </details>
 
@@ -63,21 +64,17 @@ The example below shows a real-life case where the IT department faced an intens
 
 <img src="WebContent\resources\img\Hierarchy-tasks.png" alt="Hierarchy of tasks" width="500" height="500">
 
-There are two main groups in a left side. 
-Black arrows point to subgroups.
-Red arrows point to tasks.
+There are two main groups on the left side. Black arrows point to subgroups. Red arrows point to tasks.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-Regarding this requirements interface for user has to looks similar to presented bellow:
+Regarding this requirements interface for user has to looks similar to presented below:
 
 <img src="WebContent\resources\img\Hierarchy-tasks-interface.png" alt="Hierarchy of tasks" width="500" height="500">
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Built With
-
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
 * [Apache Tomcat ver. 9.5](https://tomcat.apache.org/)
 * [MySQL ver. 8.0](https://www.mysql.com/)
@@ -137,6 +134,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 - [x] Add back to top links
 - [ ] Add Spring Security
+- [ ] Publish as Open Source project
 - [ ] Add FrontEnd with React
 - [ ] Multi-view Support
     - [ ] Hierarchical view
@@ -146,6 +144,10 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 <p align="right">(<a href="#top">back to top</a>)</p> 
 
+
+
+<!-- Implementation -->
+## Implementation
 
 
 <!-- CONTRIBUTING 
