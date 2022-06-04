@@ -50,7 +50,9 @@
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com)-->
 
-This project is a task list app which allow to group tasks in hierarchical structure.
+The main purpose of this project is a task list app where tasks represent in  hierarchical structure.
+Which is a more intuitive and friendly way for human perception of complex goals.
+
 All groups arranges by user to other groups in a nested way.
 
 In first approach of creating app the hierarchy was simplified and restricted at two levels.
