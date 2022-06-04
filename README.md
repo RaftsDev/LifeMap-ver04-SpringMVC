@@ -149,6 +149,12 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- Implementation -->
 ## Implementation
 
+###Database
+
+<img src="WebContent\resources\meta-files\DB-schema.png" alt="Schema of database" width="570" height="370">
+
+
+
 
 <!-- CONTRIBUTING 
 
