@@ -53,8 +53,7 @@
 The main purpose of this project is a task list app where tasks are represented in hierarchical structure. Which is a more intuitive and friendly way for human perception of complex goals.
 
 
-In first approach of creating app the hierarchy was simplified and restricted at two levels.
- But in next step is to switch to unlimit levels of hierarchy.
+In the first approach of creating an app the hierarchy was simplified and restricted at two levels. Further this restriction will be readjusted. 
 
 Example below shows case when IT tech department faced intensive workflow with relocation of local office to 
 other area. In such of example certain tech team  despite regular daily routine tasks got additional work.
