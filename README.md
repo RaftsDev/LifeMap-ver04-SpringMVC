@@ -149,21 +149,25 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- Implementation -->
 ## Implementation
 
-###Database
+<p><b>Database</b></p>
 
 <img src="WebContent\resources\meta-files\DB-schema.png" alt="Schema of database" width="570" height="370">
 
-####Screenshot of data in Branch table
+<p align="right">(<a href="#top">back to top</a>)</p> 
+
+<p><b>Screenshot of data in Branch table</b></p>
 
 <img src="WebContent\resources\meta-files\adjacency-list.png" alt="adjacency list visual representation" width="570" height="370">
 
-###Code
+<p align="right">(<a href="#top">back to top</a>)</p> 
+
+<p><b>Code</b></p>
 
 Diagram of hierarchical structure of collections transfers to jsp file through model
 
 <img src="WebContent\resources\meta-files\\HashMap.png" alt="hierarchical structure of collections" width="570" height="370">
 
-
+<p align="right">(<a href="#top">back to top</a>)</p> 
 
 
 <!-- CONTRIBUTING 
