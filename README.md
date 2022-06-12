@@ -80,7 +80,7 @@ Regarding this requirements interface for user has to looks similar to presented
 * [MySQL ver. 8.0](https://www.mysql.com/)
 * [Bootstrap](https://getbootstrap.com)
 * [Hibernate](https://hibernate.org/)
-* [Spring](https://spring.io/)
+* [Spring MVC](https://spring.io/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
