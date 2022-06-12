@@ -140,6 +140,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
     - [ ] Hierarchical view
     - [ ] Table view
 - [ ] Connect HoloLens technology
+- [ ] Apply Graph theory
 
 <!-- See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues). -->
 
