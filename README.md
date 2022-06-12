@@ -62,7 +62,7 @@ The example below shows a real-life case where the IT department faced an intens
 
 
 
-<img src="WebContent\resources\img\Hierarchy-tasks.png" alt="Hierarchy of tasks" width="500" height="500">
+<img src="WebContent\resources\meta-files\Hierarchy-tasks.png" alt="Hierarchy of tasks" width="500" height="500">
 
 There are two main groups on the left side. Black arrows point to subgroups. Red arrows point to tasks.
 
@@ -70,7 +70,7 @@ There are two main groups on the left side. Black arrows point to subgroups. Red
 
 Regarding this requirements interface for user has to looks similar to presented below:
 
-<img src="WebContent\resources\img\Hierarchy-tasks-interface.png" alt="Hierarchy of tasks" width="500" height="500">
+<img src="WebContent\resources\meta-files\Hierarchy-tasks-interface.png" alt="Hierarchy of tasks" width="500" height="500">
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
