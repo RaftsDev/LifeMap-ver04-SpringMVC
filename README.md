@@ -20,7 +20,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/RaftsDev/LifeMap-ver04-SpringMVC">
-    <img src="WebContent\resources\img\Logo-cut-version-70.png" alt="Logo" width="80" height="80">
+    <img src="WebContent\resources\meta-files\Logo-cut-version-70.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">LifeMap project</h3>
