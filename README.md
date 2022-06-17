@@ -34,6 +34,7 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
+       <li><a href="#Current version functionality">Current version functionality</a></li>
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
@@ -72,11 +73,14 @@ Regarding this requirements interface for user has to looks similar to presented
 
 ### Current version functionality
 
-Demonstration nested Task list and CRUD functionality(Add task, delete task) presented in the video bellow:
+Demonstration view of nested Task list bellow:
 
-<video width="500" height="400" controls>
-  <source src="WebContent\resources\meta-files\Demonstration - CRUD.mp4" type="video/mp4">
-</video>
+<img src="WebContent\resources\meta-files\Task-list-view.gif" alt="Task list" width="400" height="300">
+
+
+CRUD functionality:
+
+ <img src="WebContent\resources\meta-files\CRUD.gif" alt="CRUD" width="400" height="300">
 
 ### Built With
 
