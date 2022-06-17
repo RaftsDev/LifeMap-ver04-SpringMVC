@@ -22,7 +22,6 @@
   <a href="https://github.com/RaftsDev/LifeMap-ver04-SpringMVC">
     <img src="WebContent\resources\meta-files\Logo-cut-version-70.png" alt="Logo" width="80" height="80">
   </a>
-
   <h3 align="center">LifeMap project</h3>
 </div>
 
@@ -61,9 +60,6 @@ The example below shows a real-life case where the IT department faced an intens
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-
-<img src="WebContent\resources\meta-files\Hierarchy-tasks.png" alt="Hierarchy of tasks" width="500" height="500">
-
 There are two main groups on the left side. Black arrows point to subgroups. Red arrows point to tasks.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -73,6 +69,14 @@ Regarding this requirements interface for user has to looks similar to presented
 <img src="WebContent\resources\meta-files\Hierarchy-tasks-interface.png" alt="Hierarchy of tasks" width="500" height="500">
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+### Current version functionality
+
+Demonstration nested Task list and CRUD functionality(Add task, delete task) presented in the video bellow:
+
+<video width="500" height="400" controls>
+  <source src="WebContent\resources\meta-files\Demonstration - CRUD.mp4" type="video/mp4">
+</video>
 
 ### Built With
 
