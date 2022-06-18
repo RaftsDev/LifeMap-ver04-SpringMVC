@@ -142,6 +142,9 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 ## Roadmap
 
 - [x] Add back to top links
+- [ ] Add AOP (logging users activity)
+    - [x] Output logs to Logger in a console
+    - [ ] Push logs to database
 - [ ] Add Spring Security
 - [ ] Publish as Open Source project
 - [ ] Add FrontEnd with React
