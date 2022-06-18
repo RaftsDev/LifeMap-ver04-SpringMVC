@@ -23,16 +23,16 @@ public class UsersActivity {
 	private int id;
 	
 	@Column(name="event")
-	private String event;
+	private String activityEvent;
 	
 
 	public UsersActivity() {
 		
 	}
 
-	public UsersActivity(String event) {
+	public UsersActivity(String activityEvent) {
 		
-		this.event = event;
+		this.activityEvent = activityEvent;
 	}
 
 	public int getId() {
@@ -43,18 +43,19 @@ public class UsersActivity {
 		this.id = id;
 	}
 
-	public String getEvent() {
-		return event;
+	public String getActivityEvent() {
+		return activityEvent;
 	}
 
-	public void setEvent(String event) {
-		this.event = event;
+	public void setActivityEvent(String activityEvent) {
+		this.activityEvent = activityEvent;
 	}
 
 	@Override
 	public String toString() {
-		return "UsersActivity [id=" + id + ", event=" + event + "]";
+		return "UsersActivity [id=" + id + ", activityEvent=" + activityEvent + "]";
 	}
+
 
 	
 }

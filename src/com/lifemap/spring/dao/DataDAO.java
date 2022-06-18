@@ -7,6 +7,7 @@ import java.util.Map;
 import com.lifemap.spring.entity.Branches;
 import com.lifemap.spring.entity.Tasks;
 import com.lifemap.spring.entity.Users;
+import com.lifemap.spring.entity.UsersActivity;
 
 public interface DataDAO {
 	
@@ -33,5 +34,7 @@ public interface DataDAO {
 	public void saveUser(Users user);
 
 	public void deleteUser(int theId);
+
+	public void saveUsersActivity(UsersActivity usersActivity);
 
 }

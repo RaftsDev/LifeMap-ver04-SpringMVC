@@ -17,6 +17,7 @@ import org.springframework.stereotype.Repository;
 import com.lifemap.spring.entity.Branches;
 import com.lifemap.spring.entity.Tasks;
 import com.lifemap.spring.entity.Users;
+import com.lifemap.spring.entity.UsersActivity;
 
 @Repository
 public class DataDAOImpl implements DataDAO {
@@ -207,6 +208,16 @@ public class DataDAOImpl implements DataDAO {
 		theQuery.setParameter("userId", theId);
 
 		theQuery.executeUpdate();
+	}
+	
+	@Override
+	public void saveUsersActivity(UsersActivity usersActivity) {
+		// TODO Auto-generated method stub
+		
+		Session currentSession = sessionFactory.getCurrentSession();
+
+		currentSession.saveOrUpdate(usersActivity);
+
 	}
 
 }

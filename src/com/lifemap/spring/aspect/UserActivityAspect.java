@@ -6,15 +6,20 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.jboss.logging.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.lifemap.spring.entity.Tasks;
 import com.lifemap.spring.entity.UsersActivity;
+import com.lifemap.spring.service.DataService;
 
 @Aspect
 @Component
 public class UserActivityAspect {
 
+	@Autowired
+	private DataService dataService;
+	
 	private Logger myLogger = Logger.getLogger(getClass().getName());
 	
 	@Pointcut("execution(* com.lifemap.spring.dao.DataDAOImpl.deleteTask(..))")
@@ -43,10 +48,17 @@ public class UserActivityAspect {
 			arguments+=" "+ tmpArg.toString()+" |";
 		}
 			
-		//myLogger.info("=====> @AfterReturning: calling method: " + theMethod + ", " + arguments);
+		
 			arguments = "=====> @AfterReturning: calling method: " + theMethod + ", " + arguments;
-			UsersActivity usersActivity = new UsersActivity(arguments);
+			
+			
 	}
+		myLogger.info(arguments);
+		UsersActivity usersActivity = new UsersActivity(arguments);
+		myLogger.info(usersActivity.toString());
+		
+		//Process pushing logs to database failed
+		//dataService.saveUsersActivity(usersActivity);
 	
 }
 }
