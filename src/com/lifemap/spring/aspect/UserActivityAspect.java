@@ -32,7 +32,7 @@ public class UserActivityAspect {
 		for(Object tmpArg : args ) {
 			arguments+=" "+ tmpArg.toString()+" |";
 		}
-		myLogger.info("=====> in @AfterReturning: calling method: " + theMethod + " " + arguments);
+		myLogger.info("=====> @AfterReturning: calling method: " + theMethod + ", " + arguments);
 	}
 	
 }
