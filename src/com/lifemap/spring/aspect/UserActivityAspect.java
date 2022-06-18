@@ -9,6 +9,7 @@ import org.jboss.logging.Logger;
 import org.springframework.stereotype.Component;
 
 import com.lifemap.spring.entity.Tasks;
+import com.lifemap.spring.entity.UsersActivity;
 
 @Aspect
 @Component
@@ -42,7 +43,9 @@ public class UserActivityAspect {
 			arguments+=" "+ tmpArg.toString()+" |";
 		}
 			
-		myLogger.info("=====> @AfterReturning: calling method: " + theMethod + ", " + arguments);
+		//myLogger.info("=====> @AfterReturning: calling method: " + theMethod + ", " + arguments);
+			arguments = "=====> @AfterReturning: calling method: " + theMethod + ", " + arguments;
+			UsersActivity usersActivity = new UsersActivity(arguments);
 	}
 	
 }
