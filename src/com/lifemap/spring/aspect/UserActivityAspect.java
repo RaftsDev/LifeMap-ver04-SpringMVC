@@ -8,6 +8,8 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.jboss.logging.Logger;
 import org.springframework.stereotype.Component;
 
+import com.lifemap.spring.entity.Tasks;
+
 @Aspect
 @Component
 public class UserActivityAspect {
@@ -30,9 +32,18 @@ public class UserActivityAspect {
 		Object[] args = theJoinPoint.getArgs();
 		String arguments = "Arguments:";
 		for(Object tmpArg : args ) {
+			
+			if(tmpArg instanceof Tasks) {
+				Tasks tmpTasks;
+				tmpTasks = (Tasks) tmpArg;
+				
+				arguments+=" "+ tmpTasks.getId()+" |";
+			}else {
 			arguments+=" "+ tmpArg.toString()+" |";
 		}
+			
 		myLogger.info("=====> @AfterReturning: calling method: " + theMethod + ", " + arguments);
 	}
 	
+}
 }
