@@ -9,9 +9,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.lifemap.spring.dao.DataDAO;
+import com.lifemap.spring.dao.LogsDAO;
 import com.lifemap.spring.entity.Branches;
 import com.lifemap.spring.entity.Tasks;
 import com.lifemap.spring.entity.Users;
+import com.lifemap.spring.entity.UsersActivity;
 
 @Service
 public class DataServiceImpl implements DataService {
@@ -19,6 +21,9 @@ public class DataServiceImpl implements DataService {
 	
 	@Autowired
 	private DataDAO dataDAO;
+	
+	@Autowired
+	private LogsDAO logsDAO;
 	
 	@Override
 	@Transactional
@@ -104,6 +109,12 @@ public class DataServiceImpl implements DataService {
 	public void deleteUser(int theId) {
 		// TODO Auto-generated method stub
 		dataDAO.deleteUser(theId);
+	}
+
+	@Override
+	public void saveUsersActivity(UsersActivity usersActivity) {
+		// TODO Auto-generated method stub
+		logsDAO.saveUsersActivity(usersActivity);
 	}
 
 }

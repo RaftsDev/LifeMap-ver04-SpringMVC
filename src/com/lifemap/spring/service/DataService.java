@@ -7,6 +7,7 @@ import java.util.Map;
 import com.lifemap.spring.entity.Branches;
 import com.lifemap.spring.entity.Tasks;
 import com.lifemap.spring.entity.Users;
+import com.lifemap.spring.entity.UsersActivity;
 
 public interface DataService {
 
@@ -33,4 +34,7 @@ public interface DataService {
 	public void saveUser(Users theUser);
 
 	public void deleteUser(int theId);
+	
+	public void saveUsersActivity(UsersActivity usersActivity);
+	
 }
