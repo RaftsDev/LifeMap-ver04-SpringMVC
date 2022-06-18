@@ -36,7 +36,7 @@ public class UserActivityAspect {
 			if(tmpArg instanceof Tasks) {
 				Tasks tmpTasks;
 				tmpTasks = (Tasks) tmpArg;
-				
+				// Logging only Id field of Tasks object
 				arguments+=" "+ tmpTasks.getId()+" |";
 			}else {
 			arguments+=" "+ tmpArg.toString()+" |";
