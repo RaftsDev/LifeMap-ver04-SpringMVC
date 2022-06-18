@@ -10,7 +10,7 @@ import com.lifemap.spring.entity.UsersActivity;
 
 
 @Repository
-public class LogsDataDAOImpl implements LogsDataDAO {
+public class LogsDAOImpl implements LogsDAO {
 
 	
 	@Autowired
