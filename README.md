@@ -51,7 +51,7 @@
 ## About The Project
 
 Project in a process of deploying on Amazon cloud.
- The link is <a href="http://www.mindsgraph.com/landingPage/about">http://www.mindsgraph.com/about</a>
+ The link is <a href="http://www.mindsgraph.com/landingPage/about">www.mindsgraph.com/about</a>
 <br>
 
 The main purpose of this project is a task list app where tasks are represented in hierarchical structure. Which is a more intuitive and friendly way for human perception of complex goals.
