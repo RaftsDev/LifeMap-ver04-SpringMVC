@@ -147,8 +147,8 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [ ] Add AOP (logging users activity)
     - [x] Output logs to Logger in a console
     - [ ] Push logs to database
-- [ ] Add Spring Security
-- [ ] Publish as Open Source project
+- [x] Add Spring Security
+- [x] Deploy on AWS as <a href="http://www.mindsgraph.com/landingPage/about">http://www.mindsgraph.com</a>
 - [ ] Add FrontEnd with React
 - [ ] Multi-view Support
     - [ ] Hierarchical view
