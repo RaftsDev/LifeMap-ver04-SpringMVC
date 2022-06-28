@@ -53,7 +53,7 @@
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com)-->
 
 Project in a process of deploying on Amazon cloud.
- The link is:<a href="http://lifemap-env.eba-ekapkfwb.us-east-1.elasticbeanstalk.com/landingPage/about">LifeMap.elasticbeanstalk.com</a>
+ The link is:<a href="http://www.mindsgraph.com/landingPage/about">http://www.mindsgraph.com/about</a>
 <br>
 <br>
 The main purpose of this project is a task list app where tasks are represented in hierarchical structure. Which is a more intuitive and friendly way for human perception of complex goals.
