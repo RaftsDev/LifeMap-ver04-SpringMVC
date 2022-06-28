@@ -50,8 +50,6 @@
 
 ## About The Project
 
-<!-- [![Product Name Screen Shot][product-screenshot]](https://example.com)-->
-
 Project in a process of deploying on Amazon cloud.
  The link is <a href="http://www.mindsgraph.com/landingPage/about">http://www.mindsgraph.com/about</a>
 <br>
